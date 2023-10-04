@@ -53,3 +53,21 @@ class BasePage:
            """
         return wait(self.driver, timeout).until(EC.presence_of_all_elements_located(locator))
 
+    def element_is_not_visible(self, locator, timeout=5):
+        """
+         This method expects to verify whether the element is invisible or not.
+         The element is present in the DOM tree.
+         Locator - is used to find the element.
+         Timeout - the duration it will wait for. The default is set to 5 seconds, but it can be modified if needed.
+         """
+        return wait(self.driver, timeout).until(EC.invisibility_of_element_located(locator))
+
+    def element_is_clickable(self, locator, timeout=5):
+        """
+        This method expects to verify that the element is visible, displayed on the page, and enabled.
+        The element is present in the DOM tree.
+        Locator - is used to find the element.
+        Timeout - the duration it will wait for. The default is set to 5 seconds, but it can be modified if needed.
+        """
+        return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
+
