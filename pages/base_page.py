@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 import allure
 from selenium.webdriver import ActionChains
-from locators.wish_list_locators import WishListPageLocators as wl
+# from locators.wish_list_locators import WishListPageLocators as wl
 from selenium.webdriver.common.by import By
 
 class BasePage:
