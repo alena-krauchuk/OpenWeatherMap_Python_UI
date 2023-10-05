@@ -7,6 +7,7 @@ from selenium.webdriver import ActionChains
 # from locators.wish_list_locators import WishListPageLocators as wl
 from selenium.webdriver.common.by import By
 
+
 class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
@@ -76,4 +77,3 @@ class BasePage:
         This method scrolls the page to the selected element, making it visible to the user.
         """
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
-
