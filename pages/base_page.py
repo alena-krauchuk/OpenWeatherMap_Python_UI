@@ -71,3 +71,9 @@ class BasePage:
         """
         return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
+    def go_to_element(self, element):
+        """
+        This method scrolls the page to the selected element, making it visible to the user.
+        """
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
