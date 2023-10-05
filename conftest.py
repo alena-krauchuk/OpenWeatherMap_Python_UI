@@ -9,6 +9,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 
+
+@pytest.fixture(scope="function")
 def driver():
     print('\nstart browser...')
     chrome_options = Options()
@@ -25,4 +27,3 @@ def driver():
     yield driver
     print('\nquit browser...')
     driver.quit()
-
