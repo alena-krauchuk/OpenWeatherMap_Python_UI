@@ -1,2 +1,4 @@
-class MainPageUrls:
-    url_main_page = "https://home.openweathermap.org"
+# class MainPageUrls:
+
+url_main_page = "https://openweathermap.org/"
+
