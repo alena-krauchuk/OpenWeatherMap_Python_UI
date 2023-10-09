@@ -1,4 +1,4 @@
 # class MainPageUrls:
 
-url_main_page = "https://openweathermap.org/"
+URL_MAIN_PAGE = "https://openweathermap.org/"
 
