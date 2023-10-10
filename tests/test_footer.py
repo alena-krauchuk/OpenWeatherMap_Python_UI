@@ -19,3 +19,8 @@ class TestFooter:
         page.open()
         assert page.element_is_visible(self.footer_locators.FOOTER_SECTION)
 
+    def test_tc_01_02_01_check_presence_of_product_collections_section(self, driver):
+        """Checks if the Product Collections section is present in the DOM tree"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_present(self.footer_locators.PRODUCT_COLLECTIONS_SECTION)
