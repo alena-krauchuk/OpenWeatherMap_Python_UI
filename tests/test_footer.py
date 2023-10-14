@@ -60,3 +60,13 @@ class TestFooter:
             page.open()
             assert page.element_is_visible(self.footer_locators.SUBSCRIPTION_SECTION), \
                 "The Subscription section is invisible on the page"
+
+        def test_tc_01_02_04_check_visibility_of_technologies_section(self, driver):
+            """Checks if Technologies section is visible on the Main Page"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_visible(self.footer_locators.TECHNOLOGIES_SECTION), \
+                "The Technologies section is invisible on the page"
+
+
+
