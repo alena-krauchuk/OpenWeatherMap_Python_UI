@@ -114,3 +114,10 @@ class TestFooter:
             page.open()
             assert page.element_is_visible(self.footer_locators.SINGLE_LINKS_SECTION), \
                 "The single links section is invisible on the page"
+
+        def test_tc_01_02_08_check_visibility_of_download_openweather_app_section(self, driver):
+            """Checks if the Download OpenWeather app section is visible on the Main Page"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_visible(self.footer_locators.DOWNLOAD_OPENWEATHER_APP_SECTION), \
+                "The Download OpenWeather app section is invisible on the page"
