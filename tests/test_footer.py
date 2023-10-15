@@ -45,6 +45,13 @@ class TestFooter:
             assert page.element_is_present(self.footer_locators.TERMS_AND_CONDITIONS_SECTION), \
                 "The Terms and Conditions section is not present in the DOM tree"
 
+        def test_tc_01_01_06_check_presence_of_company_section(self, driver):
+            """Checks if the Company section is present in the DOM tree"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_present(self.footer_locators.COMPANY_SECTION), \
+                "The Company section is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
