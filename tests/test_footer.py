@@ -51,11 +51,11 @@ class TestFooter:
                 "The Company section is not present in the DOM tree"
 
         def test_tc_01_01_07_check_presence_of_single_links_section(self, driver):
-            """Checks if the Single links section is present in the DOM tree"""
+            """Checks if the single links section is present in the DOM tree"""
             page = FooterPage(driver, URL_MAIN_PAGE)
             page.open()
             assert page.element_is_present(self.footer_locators.SINGLE_LINKS_SECTION), \
-                "The Single links section is not present in the DOM tree"
+                "The single links section is not present in the DOM tree"
 
     class TestFooterVisibility:
         footer_locators = FooterLocators()
@@ -100,3 +100,10 @@ class TestFooter:
             page.open()
             assert page.element_is_visible(self.footer_locators.COMPANY_SECTION), \
                 "The Company section is invisible on the page"
+
+        def test_tc_01_02_07_check_visibility_of_single_links_section(self, driver):
+            """Checks if the single links section is visible on the Main Page"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_visible(self.footer_locators.SINGLE_LINKS_SECTION), \
+                "The single links section is invisible on the page"
