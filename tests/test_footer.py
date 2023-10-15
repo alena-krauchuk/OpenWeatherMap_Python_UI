@@ -128,3 +128,10 @@ class TestFooter:
             page.open()
             assert page.element_is_visible(self.footer_locators.DOWNLOAD_OPENWEATHER_APP_SECTION), \
                 "The Download OpenWeather app section is invisible on the page"
+
+        def test_tc_01_02_09_check_visibility_of_social_media_section(self, driver):
+            """Checks if the Social media section is visible on the Main Page"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_visible(self.footer_locators.SOCIAL_MEDIA_SECTION), \
+                "The Social media section is invisible on the page"
