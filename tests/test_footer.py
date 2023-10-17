@@ -142,3 +142,10 @@ class TestFooter:
             page.open()
             assert page.element_is_visible(self.footer_locators.SOCIAL_MEDIA_SECTION), \
                 "The Social media section is invisible on the page"
+
+        def test_tc_01_02_10_check_visibility_of_copyright_section(self, driver):
+            """Checks if the Copyright section is visible on the Main Page"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_visible(self.footer_locators.COPYRIGHT_SECTION), \
+                "The Copyright section is invisible on the page"
