@@ -71,6 +71,13 @@ class TestFooter:
             assert page.element_is_present(self.footer_locators.SOCIAL_MEDIA_SECTION), \
                 "The Social media section is not present in the DOM tree"
 
+        def test_tc_01_01_10_check_presence_of_copyright_section(self, driver):
+            """Checks if the Copyright section is present in the DOM tree"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_present(self.footer_locators.COPYRIGHT_SECTION), \
+                "The Copyright section is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
