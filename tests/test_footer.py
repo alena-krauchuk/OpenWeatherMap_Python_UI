@@ -157,3 +157,9 @@ class TestFooter:
             assert page.element_is_visible(self.footer_locators.SOCIAL_MEDIA_SECTION), \
                 "The Social media section is invisible on the page"
 
+        def test_tc_01_02_11_check_visibility_of_rmets_section(self, driver):
+            """Checks if the RMetS section is visible on the Main Page"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_visible(self.footer_locators.RMETS_SECTION), \
+                "The RMetS section is invisible on the page"
