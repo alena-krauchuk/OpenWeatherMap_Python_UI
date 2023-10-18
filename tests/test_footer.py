@@ -173,3 +173,14 @@ class TestFooter:
             page.open()
             assert page.element_is_visible(self.footer_locators.RMETS_SECTION), \
                 "The RMetS section is invisible on the page"
+
+        class TestProductCollectionsSectionVisibility:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_02_12_check_visibility_of_current_and_forecast_apis_link(self, driver):
+                """Checks if the Current and Forecast APIs link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK), \
+                    "The Current and Forecast APIs link is invisible on the page"
+
