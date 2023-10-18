@@ -191,3 +191,9 @@ class TestFooter:
                 assert page.element_is_visible(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK), \
                     "The Current and Forecast APIs link is invisible on the page"
 
+            def test_tc_01_02_13_check_visibility_of_historical_weather_data_link(self, driver):
+                """Checks if the Historical Weather Data link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK), \
+                    "The Historical Weather Data link is invisible on the page"
