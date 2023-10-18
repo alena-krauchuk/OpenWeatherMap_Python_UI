@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 class FooterLocators:
     COMPANY_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(1) > div:nth-child(3)")
     COPYRIGHT_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(4) > div:nth-child(1)")
+    CURRENT_AND_FORECAST_APIS_LINK = (By.CSS_SELECTOR,
+                                      "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(1) > a")
     DOWNLOAD_OPENWEATHER_APP_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(3)")
     FOOTER_SECTION = (By.CSS_SELECTOR, "#footer-website")
     PRODUCT_COLLECTIONS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(1) > div:nth-child(1)")
