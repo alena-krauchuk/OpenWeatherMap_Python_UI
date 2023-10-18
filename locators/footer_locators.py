@@ -10,6 +10,8 @@ class FooterLocators:
                                       "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(1) > a")
     DOWNLOAD_OPENWEATHER_APP_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(3)")
     FOOTER_SECTION = (By.CSS_SELECTOR, "#footer-website")
+    HISTORICAL_WEATHER_DATA_LINK = (By.CSS_SELECTOR,
+                                    "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(2) > a")
     PRODUCT_COLLECTIONS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(1) > div:nth-child(1)")
     RMETS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(3) > div:nth-child(2)")
     SINGLE_LINKS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(3)")
