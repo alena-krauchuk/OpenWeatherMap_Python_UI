@@ -5,7 +5,7 @@ from data.data_urls import URL_MAIN_PAGE
 
 class TestFooter:
 
-    class TestFooterPresence:
+    class TestFooterPresence():
         footer_locators = FooterLocators()
 
         def test_tc_01_01_01_check_presence_of_footer(self, driver):
@@ -84,6 +84,16 @@ class TestFooter:
             page.open()
             assert page.element_is_present(self.footer_locators.RMETS_SECTION), \
                 "The RMetS section is not present in the DOM tree"
+
+        class TestProductCollectionsSectionPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_01_12_check_presence_of_current_and_forecast_apis_link(self, driver):
+                """Checks if the Current and Forecast APIs link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK), \
+                    "The Current and Forecast APIs link is not present in the DOM tree"
 
     class TestFooterVisibility:
         footer_locators = FooterLocators()
