@@ -95,6 +95,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK), \
                     "The Current and Forecast APIs link is not present in the DOM tree"
 
+            def test_tc_01_01_13_check_presence_of_historical_weather_data_link(self, driver):
+                """Checks if the Historical Weather Data link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK), \
+                    "The Historical Weather Data link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
