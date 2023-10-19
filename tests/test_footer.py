@@ -102,6 +102,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK), \
                     "The Historical Weather Data link is not present in the DOM tree"
 
+            def test_tc_01_01_14_check_presence_of_weather_maps_link(self, driver):
+                """Checks if the Weather Maps link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.WEATHER_MAPS_LINK), \
+                    "The Weather Maps link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
