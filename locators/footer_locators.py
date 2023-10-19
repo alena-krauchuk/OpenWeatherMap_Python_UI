@@ -19,3 +19,4 @@ class FooterLocators:
     SUBSCRIPTION_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(1) > div:nth-child(2)")
     TECHNOLOGIES_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(1)")
     TERMS_AND_CONDITIONS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(2)")
+    WEATHER_MAPS_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(3) > a")
