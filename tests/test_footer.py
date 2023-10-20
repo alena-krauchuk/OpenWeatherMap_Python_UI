@@ -268,9 +268,20 @@ class TestFooter:
                 assert page.element_is_visible(self.footer_locators.WIDGETS_LINK), \
                     "The Widgets link is invisible on the page"
 
+        class TestSubscriptionSectionVisibility:
+            footer_locators = FooterLocators()
+
             def test_tc_01_02_17_check_visibility_of_how_to_start_link(self, driver):
                 """Checks if the How to start link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.HOW_TO_START_LINK), \
                     "The How to start link is invisible on the page"
+
+            def test_tc_01_02_18_check_visibility_of_pricing_link(self, driver):
+                """Checks if the Pricing link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.PRICING_LINK), \
+                    "The Pricing link is invisible on the page"
+
