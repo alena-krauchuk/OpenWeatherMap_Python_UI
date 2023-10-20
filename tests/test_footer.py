@@ -236,3 +236,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.WEATHER_DASHBOARD_LINK), \
                     "The Weather Dashboard link is invisible on the page"
+
+            def test_tc_01_02_16_check_visibility_of_widgets_link(self, driver):
+                """Checks if the Widgets link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.WIDGETS_LINK), \
+                    "The Widgets link is invisible on the page"
