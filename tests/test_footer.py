@@ -125,6 +125,16 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.WIDGETS_LINK), \
                     "The Widgets link is not present in the DOM tree"
 
+        class TestSubscriptionSectionPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_01_17_check_presence_of_how_to_start_link(self, driver):
+                """Checks if the How to start link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.HOW_TO_START_LINK), \
+                    "The How to start link is not present in the DOM tree"
+
     class TestFooterVisibility:
 
         class TestFooterSectionsVisibility:
