@@ -135,6 +135,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.HOW_TO_START_LINK), \
                     "The How to start link is not present in the DOM tree"
 
+            def test_tc_01_01_18_check_presence_of_pricing_link(self, driver):
+                """Checks if the Pricing link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.PRICING_LINK), \
+                    "The Pricing link is not present in the DOM tree"
+
     class TestFooterVisibility:
 
         class TestFooterSectionsVisibility:
