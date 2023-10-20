@@ -21,3 +21,4 @@ class FooterLocators:
     TERMS_AND_CONDITIONS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(2)")
     WEATHER_DASHBOARD_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(4) > a")
     WEATHER_MAPS_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(3) > a")
+    WIDGETS_LINK = (By.CSS_SELECTOR, "#footer-website div:nth-child(1) > div:nth-child(1) li:nth-child(5) > a")
