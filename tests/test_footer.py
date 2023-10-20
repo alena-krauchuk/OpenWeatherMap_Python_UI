@@ -142,6 +142,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.PRICING_LINK), \
                     "The Pricing link is not present in the DOM tree"
 
+            def test_tc_01_01_19_check_presence_of_subscribe_for_free_link(self, driver):
+                """Checks if the Subscribe for free link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators. SUBSCRIBE_FOR_FREE_LINK), \
+                    "The Subscribe for free link is not present in the DOM tree"
+
     class TestFooterVisibility:
 
         class TestFooterSectionsVisibility:
