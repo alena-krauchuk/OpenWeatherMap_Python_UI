@@ -6,16 +6,17 @@ from data.data_urls import URL_MAIN_PAGE
 class TestFooter:
 
     class TestFooterPresence:
+        footer_locators = FooterLocators()
+
+        def test_tc_01_01_01_check_presence_of_footer(self, driver):
+            """Checks if the footer is present in the DOM tree"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_present(self.footer_locators.FOOTER_SECTION), \
+                "The footer is not present in the DOM tree"
 
         class TestFooterSectionsPresence:
             footer_locators = FooterLocators()
-
-            def test_tc_01_01_01_check_presence_of_footer(self, driver):
-                """Checks if the footer is present in the DOM tree"""
-                page = FooterPage(driver, URL_MAIN_PAGE)
-                page.open()
-                assert page.element_is_present(self.footer_locators.FOOTER_SECTION), \
-                    "The footer is not present in the DOM tree"
 
             def test_tc_01_01_02_check_presence_of_product_collections_section(self, driver):
                 """Checks if the Product Collections section is present in the DOM tree"""
@@ -90,35 +91,42 @@ class TestFooter:
         class TestProductCollectionsSectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_12_check_presence_of_current_and_forecast_apis_link(self, driver):
+            def test_tc_01_01_12_check_presence_of_product_collections_section_title(self, driver):
+                """Checks if the Product Collections section's title is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.PRODUCT_COLLECTIONS_TITLE), \
+                    "The Product Collections section's title is not present in the DOM tree"
+
+            def test_tc_01_01_13_check_presence_of_current_and_forecast_apis_link(self, driver):
                 """Checks if the Current and Forecast APIs link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK), \
                     "The Current and Forecast APIs link is not present in the DOM tree"
 
-            def test_tc_01_01_13_check_presence_of_historical_weather_data_link(self, driver):
+            def test_tc_01_01_14_check_presence_of_historical_weather_data_link(self, driver):
                 """Checks if the Historical Weather Data link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK), \
                     "The Historical Weather Data link is not present in the DOM tree"
 
-            def test_tc_01_01_14_check_presence_of_weather_maps_link(self, driver):
+            def test_tc_01_01_15_check_presence_of_weather_maps_link(self, driver):
                 """Checks if the Weather Maps link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.WEATHER_MAPS_LINK), \
                     "The Weather Maps link is not present in the DOM tree"
 
-            def test_tc_01_01_15_check_presence_of_weather_dashboard_link(self, driver):
+            def test_tc_01_01_16_check_presence_of_weather_dashboard_link(self, driver):
                 """Checks if the Weather Dashboard link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.WEATHER_DASHBOARD_LINK), \
                     "The Weather Dashboard link is not present in the DOM tree"
 
-            def test_tc_01_01_16_check_presence_of_widgets_link(self, driver):
+            def test_tc_01_01_17_check_presence_of_widgets_link(self, driver):
                 """Checks if the Widgets link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -128,28 +136,28 @@ class TestFooter:
         class TestSubscriptionSectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_17_check_presence_of_how_to_start_link(self, driver):
+            def test_tc_01_01_18_check_presence_of_how_to_start_link(self, driver):
                 """Checks if the How to start link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.HOW_TO_START_LINK), \
                     "The How to start link is not present in the DOM tree"
 
-            def test_tc_01_01_18_check_presence_of_pricing_link(self, driver):
+            def test_tc_01_01_19_check_presence_of_pricing_link(self, driver):
                 """Checks if the Pricing link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.PRICING_LINK), \
                     "The Pricing link is not present in the DOM tree"
 
-            def test_tc_01_01_19_check_presence_of_subscribe_for_free_link(self, driver):
+            def test_tc_01_01_20_check_presence_of_subscribe_for_free_link(self, driver):
                 """Checks if the Subscribe for free link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK), \
                     "The Subscribe for free link is not present in the DOM tree"
 
-            def test_tc_01_01_20_check_presence_of_faq_link(self, driver):
+            def test_tc_01_01_21_check_presence_of_faq_link(self, driver):
                 """Checks if the FAQ link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
