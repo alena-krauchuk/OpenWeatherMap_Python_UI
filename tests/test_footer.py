@@ -292,3 +292,11 @@ class TestFooter:
                 assert page.element_is_visible(self.footer_locators.PRICING_LINK), \
                     "The Pricing link is invisible on the page"
 
+            def test_tc_01_02_19_check_visibility_of_subscribe_for_free_link(self, driver):
+                """Checks if the Subscribe for free link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK), \
+                    "The Subscribe for free link is invisible on the page"
+
+
