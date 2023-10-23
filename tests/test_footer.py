@@ -172,15 +172,16 @@ class TestFooter:
                     "The FAQ link is not present in the DOM tree"
 
     class TestFooterVisibility:
+        footer_locators = FooterLocators()
+
+        def test_tc_01_02_01_check_visibility_of_footer(self, driver):
+            """Checks if the footer is visible on the Main Page"""
+            page = FooterPage(driver, URL_MAIN_PAGE)
+            page.open()
+            assert page.element_is_visible(self.footer_locators.FOOTER_SECTION), "The footer is invisible on the page"
 
         class TestFooterSectionsVisibility:
             footer_locators = FooterLocators()
-
-            def test_tc_01_02_01_check_visibility_of_footer(self, driver):
-                """Checks if the footer is visible on the Main Page"""
-                page = FooterPage(driver, URL_MAIN_PAGE)
-                page.open()
-                assert page.element_is_visible(self.footer_locators.FOOTER_SECTION), "The footer is invisible on the page"
 
             def test_tc_01_02_02_check_visibility_of_product_collections_section(self, driver):
                 """Checks if the Product Collections section is visible on the Main Page"""
@@ -255,35 +256,42 @@ class TestFooter:
         class TestProductCollectionsSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_12_check_visibility_of_current_and_forecast_apis_link(self, driver):
+            def test_tc_01_02_12_check_visibility_of_product_collections_section_title(self, driver):
+                """Checks if the Product Collections section's title is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.PRODUCT_COLLECTIONS_SECTION_TITLE), \
+                    "The Product Collections section's title is invisible on the page"
+
+            def test_tc_01_02_13_check_visibility_of_current_and_forecast_apis_link(self, driver):
                 """Checks if the Current and Forecast APIs link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK), \
                     "The Current and Forecast APIs link is invisible on the page"
 
-            def test_tc_01_02_13_check_visibility_of_historical_weather_data_link(self, driver):
+            def test_tc_01_02_14_check_visibility_of_historical_weather_data_link(self, driver):
                 """Checks if the Historical Weather Data link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK), \
                     "The Historical Weather Data link is invisible on the page"
 
-            def test_tc_01_02_14_check_visibility_of_weather_maps_link(self, driver):
+            def test_tc_01_02_15_check_visibility_of_weather_maps_link(self, driver):
                 """Checks if the Weather Maps link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.WEATHER_MAPS_LINK), \
                     "The Weather Maps link is invisible on the page"
 
-            def test_tc_01_02_15_check_visibility_of_weather_dashboard_link(self, driver):
+            def test_tc_01_02_16_check_visibility_of_weather_dashboard_link(self, driver):
                 """Checks if the Weather Dashboard link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.WEATHER_DASHBOARD_LINK), \
                     "The Weather Dashboard link is invisible on the page"
 
-            def test_tc_01_02_16_check_visibility_of_widgets_link(self, driver):
+            def test_tc_01_02_17_check_visibility_of_widgets_link(self, driver):
                 """Checks if the Widgets link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -293,28 +301,28 @@ class TestFooter:
         class TestSubscriptionSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_17_check_visibility_of_how_to_start_link(self, driver):
+            def test_tc_01_02_18_check_visibility_of_how_to_start_link(self, driver):
                 """Checks if the How to start link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.HOW_TO_START_LINK), \
                     "The How to start link is invisible on the page"
 
-            def test_tc_01_02_18_check_visibility_of_pricing_link(self, driver):
+            def test_tc_01_02_19_check_visibility_of_pricing_link(self, driver):
                 """Checks if the Pricing link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.PRICING_LINK), \
                     "The Pricing link is invisible on the page"
 
-            def test_tc_01_02_19_check_visibility_of_subscribe_for_free_link(self, driver):
+            def test_tc_01_02_20_check_visibility_of_subscribe_for_free_link(self, driver):
                 """Checks if the Subscribe for free link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK), \
                     "The Subscribe for free link is invisible on the page"
 
-            def test_tc_01_02_20_check_visibility_of_faq_link(self, driver):
+            def test_tc_01_02_21_check_visibility_of_faq_link(self, driver):
                 """Checks if the FAQ link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
