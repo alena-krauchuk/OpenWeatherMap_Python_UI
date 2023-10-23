@@ -301,28 +301,35 @@ class TestFooter:
         class TestSubscriptionSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_18_check_visibility_of_how_to_start_link(self, driver):
+            def test_tc_01_02_18_check_visibility_of_subscription_section_title(self, driver):
+                """Checks if the Subscription section's title is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.SUBSCRIPTION_SECTION_TITLE), \
+                    "The Subscription section's title is invisible on the page"
+
+            def test_tc_01_02_19_check_visibility_of_how_to_start_link(self, driver):
                 """Checks if the How to start link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.HOW_TO_START_LINK), \
                     "The How to start link is invisible on the page"
 
-            def test_tc_01_02_19_check_visibility_of_pricing_link(self, driver):
+            def test_tc_01_02_20_check_visibility_of_pricing_link(self, driver):
                 """Checks if the Pricing link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.PRICING_LINK), \
                     "The Pricing link is invisible on the page"
 
-            def test_tc_01_02_20_check_visibility_of_subscribe_for_free_link(self, driver):
+            def test_tc_01_02_21_check_visibility_of_subscribe_for_free_link(self, driver):
                 """Checks if the Subscribe for free link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK), \
                     "The Subscribe for free link is invisible on the page"
 
-            def test_tc_01_02_21_check_visibility_of_faq_link(self, driver):
+            def test_tc_01_02_22_check_visibility_of_faq_link(self, driver):
                 """Checks if the FAQ link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
