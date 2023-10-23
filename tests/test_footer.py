@@ -344,3 +344,13 @@ class TestFooter:
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.FAQ_LINK), "The FAQ link is invisible on the page"
+
+        class TestTechnologiesSectionVisibility:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_02_23_check_visibility_of_technologies_section_title(self, driver):
+                """Checks if the Technologies section's title is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.TECHNOLOGIES_SECTION_TITLE), \
+                    "The Technologies section's title is invisible on the page"
