@@ -95,7 +95,7 @@ class TestFooter:
                 """Checks if the Product Collections section's title is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
-                assert page.element_is_present(self.footer_locators.PRODUCT_COLLECTIONS_TITLE), \
+                assert page.element_is_present(self.footer_locators.PRODUCT_COLLECTIONS_SECTION_TITLE), \
                     "The Product Collections section's title is not present in the DOM tree"
 
             def test_tc_01_01_13_check_presence_of_current_and_forecast_apis_link(self, driver):
@@ -136,28 +136,35 @@ class TestFooter:
         class TestSubscriptionSectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_18_check_presence_of_how_to_start_link(self, driver):
+            def test_tc_01_01_18_check_presence_of_subscription_section_title(self, driver):
+                """Checks if the Subscription section's title is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.SUBSCRIPTION_SECTION_TITLE), \
+                    "The Subscription section's title is not present in the DOM tree"
+
+            def test_tc_01_01_19_check_presence_of_how_to_start_link(self, driver):
                 """Checks if the How to start link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.HOW_TO_START_LINK), \
                     "The How to start link is not present in the DOM tree"
 
-            def test_tc_01_01_19_check_presence_of_pricing_link(self, driver):
+            def test_tc_01_01_20_check_presence_of_pricing_link(self, driver):
                 """Checks if the Pricing link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.PRICING_LINK), \
                     "The Pricing link is not present in the DOM tree"
 
-            def test_tc_01_01_20_check_presence_of_subscribe_for_free_link(self, driver):
+            def test_tc_01_01_21_check_presence_of_subscribe_for_free_link(self, driver):
                 """Checks if the Subscribe for free link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK), \
                     "The Subscribe for free link is not present in the DOM tree"
 
-            def test_tc_01_01_21_check_presence_of_faq_link(self, driver):
+            def test_tc_01_01_22_check_presence_of_faq_link(self, driver):
                 """Checks if the FAQ link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
