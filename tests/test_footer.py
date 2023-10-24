@@ -188,7 +188,12 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.OUR_TECHNOLOGY_LINK), \
                     "The Our technology link is not present in the DOM tree"
 
-
+            def test_tc_01_01_25_check_presence_of_accuracy_and_quality_of_weather_data_link(self, driver):
+                """Checks if the Accuracy and quality of weather data link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK), \
+                    "The Accuracy and quality of weather data link is not present in the DOM tree"
 
     class TestFooterVisibility:
         footer_locators = FooterLocators()
