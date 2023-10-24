@@ -181,6 +181,15 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.TECHNOLOGIES_SECTION_TITLE), \
                     "The Technologies section's title is not present in the DOM tree"
 
+            def test_tc_01_01_24_check_presence_of_our_technology_link(self, driver):
+                """Checks if the Our technology link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.OUR_TECHNOLOGY_LINK), \
+                    "The Our technology link is not present in the DOM tree"
+
+
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
