@@ -7,6 +7,8 @@ class FooterLocators:
     ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK = (By.CSS_SELECTOR,
                                                  "#footer-website div :nth-child(2) :nth-child(1) ul :nth-child(2) > a")
     COMPANY_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(1) > div:nth-child(3)")
+    CONNECT_YOUR_WEATHER_STATION_LINK = (By.CSS_SELECTOR,
+                                         "#footer-website div :nth-child(2) :nth-child(1) ul :nth-child(3) > a")
     COPYRIGHT_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(4) > div:nth-child(1)")
     CURRENT_AND_FORECAST_APIS_LINK = (By.CSS_SELECTOR,
                                       "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(1) > a")
