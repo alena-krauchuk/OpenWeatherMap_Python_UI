@@ -389,3 +389,4 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK), \
                     "The Accuracy and quality of weather data link is invisible on the page"
+
