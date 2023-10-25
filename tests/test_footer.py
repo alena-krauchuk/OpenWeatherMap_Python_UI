@@ -195,6 +195,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK), \
                     "The Accuracy and quality of weather data link is not present in the DOM tree"
 
+            def test_tc_01_01_26_check_presence_of_connect_your_weather_station_link(self, driver):
+                """Checks if the Connect your weather station link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.CONNECT_YOUR_WEATHER_STATION_LINK), \
+                    "The Connect your weather station link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
@@ -382,3 +389,4 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK), \
                     "The Accuracy and quality of weather data link is invisible on the page"
+
