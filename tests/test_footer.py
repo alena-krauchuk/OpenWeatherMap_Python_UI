@@ -390,3 +390,10 @@ class TestFooter:
                 assert page.element_is_visible(self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK), \
                     "The Accuracy and quality of weather data link is invisible on the page"
 
+            def test_tc_01_02_26_check_visibility_of_connect_your_weather_station_link(self, driver):
+                """Checks if the Connect your weather station link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.CONNECT_YOUR_WEATHER_STATION_LINK), \
+                    "The Connect your weather station link is invisible on the page"
+
