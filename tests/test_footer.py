@@ -212,6 +212,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.TERMS_AND_CONDITIONS_SECTION_TITLE), \
                     "The Terms & Conditions section's title is not present in the DOM tree"
 
+            def test_tc_01_01_28_check_presence_of_terms_and_conditions_of_sale_link(self, driver):
+                """Checks if the Terms and conditions of sale link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.TERMS_AND_CONDITIONS_OF_SALE_LINK), \
+                    "The Terms and conditions of sale link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
