@@ -440,3 +440,10 @@ class TestFooter:
                 assert page.element_is_visible(self.footer_locators.TERMS_AND_CONDITIONS_OF_SALE_LINK), \
                     "The Terms and conditions of sale link is invisible on the Main Page"
 
+            def test_tc_01_02_29_check_visibility_of_privacy_policy_link(self, driver):
+                """Checks if the Privacy Policy link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.PRIVACY_POLICY_LINK), \
+                    "The Privacy Policy link is invisible on the Main Page"
+
