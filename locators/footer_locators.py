@@ -32,6 +32,8 @@ class FooterLocators:
     SUBSCRIPTION_SECTION_TITLE = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(1) > div:nth-child(2) p")
     TECHNOLOGIES_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(1)")
     TECHNOLOGIES_SECTION_TITLE = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(1) p")
+    TERMS_AND_CONDITIONS_OF_SALE_LINK = (By.CSS_SELECTOR,
+                                         "#footer-website > div > :nth-child(2) > :nth-child(2) ul :nth-child(1) > a")
     TERMS_AND_CONDITIONS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(2)")
     TERMS_AND_CONDITIONS_SECTION_TITLE = (By.CSS_SELECTOR,
                                           "#footer-website > div > div:nth-child(2) > div:nth-child(2) p")
