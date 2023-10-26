@@ -202,6 +202,16 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.CONNECT_YOUR_WEATHER_STATION_LINK), \
                     "The Connect your weather station link is not present in the DOM tree"
 
+        class TestTermsAndConditionsSectionPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_01_27_check_presence_of_terms_and_conditions_section_title(self, driver):
+                """Checks if the Terms & Conditions section's title is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.TERMS_AND_CONDITIONS_SECTION_TITLE), \
+                    "The Terms & Conditions section's title is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
