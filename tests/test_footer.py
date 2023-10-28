@@ -226,6 +226,17 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.PRIVACY_POLICY_LINK), \
                     "The Privacy Policy link is not present in the DOM tree"
 
+        class TestCompanySectionPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_01_30_check_presence_of_company_section_title(self, driver):
+                """Checks if the Company section's title is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.COMPANY_SECTION_TITLE), \
+                    "The Company section's title is not present in the DOM tree"
+
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
