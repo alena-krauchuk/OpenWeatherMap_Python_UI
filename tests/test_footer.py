@@ -514,3 +514,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.ABOUT_US_LINK), \
                     "The About us link is invisible on the Main Page"
+
+            def test_tc_01_02_33_check_visibility_of_blog_link(self, driver):
+                """Checks if the Blog link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.BLOG_LINK), \
+                    "The Blog link is invisible on the Main Page"
