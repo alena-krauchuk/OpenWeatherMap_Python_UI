@@ -474,4 +474,9 @@ class TestFooter:
                 assert page.element_is_visible(self.footer_locators.COMPANY_SECTION_TITLE), \
                     "The Company section's title is invisible on the Main Page"
 
-
+            def test_tc_01_02_31_check_visibility_of_company_section_content(self, driver):
+                """Checks if the Company section's content is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.COMPANY_SECTION_CONTENT), \
+                    "The Company section's content is invisible on the Main Page"
