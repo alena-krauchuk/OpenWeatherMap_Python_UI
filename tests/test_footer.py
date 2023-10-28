@@ -253,6 +253,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.ABOUT_US_LINK), \
                     "The About us link is not present in the DOM tree"
 
+            def test_tc_01_01_33_check_presence_of_blog_link(self, driver):
+                """Checks if the Blog link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.BLOG_LINK), \
+                    "The Blog link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
