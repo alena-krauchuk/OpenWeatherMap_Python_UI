@@ -267,6 +267,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.OPENWEATHER_FOR_BUSINESS_LINK), \
                     "The OpenWeather for Business link is not present in the DOM tree"
 
+            def test_tc_01_01_35_check_presence_of_ask_a_question_link(self, driver):
+                """Checks if the Ask a question link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.ASK_A_QUESTION_LINK), \
+                    "The Ask a question link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
