@@ -538,3 +538,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.BLOG_LINK), \
                     "The Blog link is invisible on the Main Page"
+
+            def test_tc_01_02_34_check_visibility_of_openweather_for_business_link(self, driver):
+                """Checks if the OpenWeather for Business link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.OPENWEATHER_FOR_BUSINESS_LINK), \
+                    "The OpenWeather for Business link is invisible on the Main Page"
