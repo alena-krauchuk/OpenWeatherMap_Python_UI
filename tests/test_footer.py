@@ -552,3 +552,13 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.ASK_A_QUESTION_LINK), \
                     "The Ask a question link is invisible on the Main Page"
+
+        class TestDownloadOpenWeatherAppSectionVisibility:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_02_36_check_visibility_of_download_openweather_app_section_title(self, driver):
+                """Checks if the Download OpenWeather app section's title is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE), \
+                    "The Download OpenWeather app section's title is invisible on the Main Page"
