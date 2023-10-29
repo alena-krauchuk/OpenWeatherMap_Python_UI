@@ -545,3 +545,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.OPENWEATHER_FOR_BUSINESS_LINK), \
                     "The OpenWeather for Business link is invisible on the Main Page"
+
+            def test_tc_01_02_35_check_visibility_of_ask_a_question_link(self, driver):
+                """Checks if the Ask a question link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.ASK_A_QUESTION_LINK), \
+                    "The Ask a question link is invisible on the Main Page"
