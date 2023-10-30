@@ -18,11 +18,14 @@ class FooterLocators:
     CURRENT_AND_FORECAST_APIS_LINK = (By.CSS_SELECTOR,
                                       "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(1) a")
     DOWNLOAD_OPENWEATHER_APP_SECTION = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) > :nth-child(1)")
-    DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) > :nth-child(1) p")
+    DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE = (
+    By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) > :nth-child(1) p")
     DOWNLOAD_ON_THE_APP_STORE_LINK = (By.CSS_SELECTOR,
                                       "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(1)")
     FAQ_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(4) a")
     FOOTER_SECTION = (By.CSS_SELECTOR, "#footer-website")
+    GET_IT_ON_GOOGLE_PLAY_LINK = (By.CSS_SELECTOR,
+                                  "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(2)")
     HISTORICAL_WEATHER_DATA_LINK = (By.CSS_SELECTOR,
                                     "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(2) a")
     HOW_TO_START_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(1) > a")
