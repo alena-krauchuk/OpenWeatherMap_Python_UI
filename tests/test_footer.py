@@ -576,3 +576,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE), \
                     "The Download OpenWeather app section's title is invisible on the Main Page"
+
+            def test_tc_01_02_37_check_visibility_of_download_on_the_app_store_link(self, driver):
+                """Checks if the Download on the App Store link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_LINK), \
+                    "The Download on the App Store link is invisible on the Main Pag"
