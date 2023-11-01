@@ -298,6 +298,16 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_LINK), \
                     "The GET IT ON Google Play link is not present in the DOM tree"
 
+        class TestRmetsSectionPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_01_39_check_presence_of_rmets_section_title(self, driver):
+                """Checks if the RMetS section's title is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.RMETS_SECTION_TITLE), \
+                    "The RMetS section's title is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 

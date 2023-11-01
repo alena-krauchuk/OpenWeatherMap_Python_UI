@@ -38,6 +38,7 @@ class FooterLocators:
     PRODUCT_COLLECTIONS_SECTION_TITLE = (By.CSS_SELECTOR,
                                          "#footer-website > div > div:nth-child(1) > div:nth-child(1) p")
     RMETS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(3) > div:nth-child(2)")
+    RMETS_SECTION_TITLE = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(3) > div:nth-child(2) p")
     SINGLE_LINKS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(3)")
     SOCIAL_MEDIA_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(4) > div:nth-child(2)")
     SUBSCRIBE_FOR_FREE_LINK = (By.CSS_SELECTOR,
