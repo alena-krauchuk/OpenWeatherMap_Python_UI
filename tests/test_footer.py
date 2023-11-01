@@ -607,3 +607,13 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_LINK), \
                     "The GET IT ON Google Play link is invisible on the Main Page"
+
+        class TestRmetsSectionVisibility:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_02_39_check_invisibility_of_rmets_section_title(self, driver):
+                """Checks if the RMetS section's title is invisible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_not_visible(self.footer_locators.RMETS_SECTION_TITLE), \
+                    "The RMetS section's title is visible on the Main Page"
