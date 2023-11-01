@@ -308,6 +308,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.RMETS_SECTION_TITLE), \
                     "The RMetS section's title is not present in the DOM tree"
 
+            def test_tc_01_01_40_check_presence_of_rmets_element(self, driver):
+                """Checks if the RMetS element is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.RMETS_ELEMENT), \
+                    "The RMetS element is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
