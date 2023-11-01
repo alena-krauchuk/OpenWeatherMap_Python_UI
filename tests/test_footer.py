@@ -617,3 +617,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_not_visible(self.footer_locators.RMETS_SECTION_TITLE), \
                     "The RMetS section's title is visible on the Main Page"
+
+            def test_tc_01_02_40_check_visibility_of_rmets_element(self, driver):
+                """Checks if the RMetS element is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.RMETS_ELEMENT), \
+                    "The RMetS element is invisible on the Main Page"
