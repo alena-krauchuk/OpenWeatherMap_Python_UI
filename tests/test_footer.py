@@ -315,6 +315,16 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.RMETS_ELEMENT), \
                     "The RMetS element is not present in the DOM tree"
 
+        class TestCopyrightSectionPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_01_41_check_presence_of_copyright_element_01(self, driver):
+                """Checks if the Copyright element 01 is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.COPYRIGHT_ELEMENT_01), \
+                    "The Copyright element 01 is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
