@@ -20,10 +20,11 @@ class FooterLocators:
     CURRENT_AND_FORECAST_APIS_LINK = (By.CSS_SELECTOR,
                                       "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(1) a")
     DOWNLOAD_OPENWEATHER_APP_SECTION = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) > :nth-child(1)")
-    DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE = (
-    By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) > :nth-child(1) p")
+    DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE = (By.CSS_SELECTOR,
+                                              "#footer-website > div > :nth-child(3) > :nth-child(1) p")
     DOWNLOAD_ON_THE_APP_STORE_LINK = (By.CSS_SELECTOR,
                                       "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(1)")
+    FACEBOOK_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(1)")
     FAQ_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(4) a")
     FOOTER_SECTION = (By.CSS_SELECTOR, "#footer-website")
     GET_IT_ON_GOOGLE_PLAY_LINK = (By.CSS_SELECTOR,
@@ -44,7 +45,7 @@ class FooterLocators:
     RMETS_ELEMENT = (By.CSS_SELECTOR,
                      "#footer-website > div > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) :nth-child(2)")
     SINGLE_LINKS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(3)")
-    SOCIAL_MEDIA_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(4) > div:nth-child(2)")
+    SOCIAL_MEDIA_SECTION = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) > :nth-child(2)")
     SUBSCRIBE_FOR_FREE_LINK = (By.CSS_SELECTOR,
                                "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(3) a")
     SUBSCRIPTION_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(1) > div:nth-child(2)")

@@ -67,26 +67,26 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.DOWNLOAD_OPENWEATHER_APP_SECTION), \
                     "The Download OpenWeather app section is not present in the DOM tree"
 
-            def test_tc_01_01_09_check_presence_of_copyright_section(self, driver):
+            def test_tc_01_01_09_check_presence_of_rmets_section(self, driver):
+                """Checks if the RMetS section is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.RMETS_SECTION), \
+                    "The RMetS section is not present in the DOM tree"
+
+            def test_tc_01_01_10_check_presence_of_copyright_section(self, driver):
                 """Checks if the Copyright section is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.COPYRIGHT_SECTION), \
                     "The Copyright section is not present in the DOM tree"
 
-            def test_tc_01_01_10_check_presence_of_social_media_section(self, driver):
+            def test_tc_01_01_11_check_presence_of_social_media_section(self, driver):
                 """Checks if the Social media section is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.SOCIAL_MEDIA_SECTION), \
                     "The Social media section is not present in the DOM tree"
-
-            def test_tc_01_01_11_check_presence_of_rmets_section(self, driver):
-                """Checks if the RMetS section is present in the DOM tree"""
-                page = FooterPage(driver, URL_MAIN_PAGE)
-                page.open()
-                assert page.element_is_present(self.footer_locators.RMETS_SECTION), \
-                    "The RMetS section is not present in the DOM tree"
 
         class TestProductCollectionsSectionPresence:
             footer_locators = FooterLocators()
@@ -331,6 +331,16 @@ class TestFooter:
                 page.open()
                 assert page.element_is_present(self.footer_locators.COPYRIGHT_ELEMENT_02), \
                     "The Copyright element 02 is not present in the DOM tree"
+
+        class TestSocialMediaSectionPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_01_43_check_presence_of_facebook_link(self, driver):
+                """Checks if the Facebook link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.FACEBOOK_LINK), \
+                    "The Facebook link is not present in the DOM tree"
 
     class TestFooterVisibility:
         footer_locators = FooterLocators()
