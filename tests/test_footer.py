@@ -651,3 +651,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.COPYRIGHT_ELEMENT_01), \
                     "The Copyright element 01 is invisible on the Main Page"
+
+            def test_tc_01_02_42_check_visibility_of_copyright_element_02(self, driver):
+                """Checks if the Copyright element 02 is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.COPYRIGHT_ELEMENT_02), \
+                    "The Copyright element 02 is invisible on the Main Page"
