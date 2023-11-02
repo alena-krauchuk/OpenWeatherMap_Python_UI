@@ -668,3 +668,13 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.COPYRIGHT_ELEMENT_02), \
                     "The Copyright element 02 is invisible on the Main Page"
+
+        class TestSocialMediaSectionVisibility:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_02_43_check_visibility_of_facebook_link(self, driver):
+                """Checks if the Facebook link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.FACEBOOK_LINK), \
+                    "The Facebook link is invisible on the Main Page"
