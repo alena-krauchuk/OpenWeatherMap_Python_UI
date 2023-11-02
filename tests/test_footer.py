@@ -325,6 +325,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.COPYRIGHT_ELEMENT_01), \
                     "The Copyright element 01 is not present in the DOM tree"
 
+            def test_tc_01_01_42_check_presence_of_copyright_element_02(self, driver):
+                """Checks if the Copyright element 02 is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.COPYRIGHT_ELEMENT_02), \
+                    "The Copyright element 02 is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
