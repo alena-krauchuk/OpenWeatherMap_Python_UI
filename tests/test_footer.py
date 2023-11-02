@@ -628,7 +628,7 @@ class TestFooter:
         class TestRmetsSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_39_check_invisibility_of_rmets_section_title(self, driver):
+            def test_tc_01_02_39_check_visibility_of_rmets_section_title(self, driver):
                 """Checks if the RMetS section's title is invisible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -641,3 +641,13 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.RMETS_ELEMENT), \
                     "The RMetS element is invisible on the Main Page"
+
+        class TestCopyrightSectionVisibility:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_02_41_check_visibility_of_copyright_element_01(self, driver):
+                """Checks if the Copyright element 01 is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.COPYRIGHT_ELEMENT_01), \
+                    "The Copyright element 01 is invisible on the Main Page"
