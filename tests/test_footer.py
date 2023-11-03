@@ -343,11 +343,18 @@ class TestFooter:
                     "The Facebook link is not present in the DOM tree"
 
             def test_tc_01_01_44_check_presence_of_twitter_link(self, driver):
-                """Checks if the Facebook link is present in the DOM tree"""
+                """Checks if the Twitter link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.TWITTER_LINK), \
-                    "The Facebook link is not present in the DOM tree"
+                    "The Twitter link is not present in the DOM tree"
+
+            def test_tc_01_01_45_check_presence_of_linkedin_link(self, driver):
+                """Checks if the Linkedin link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.LINKEDIN_LINK), \
+                    "The Linkedin link is not present in the DOM tree"
 
     class TestFooterVisibility:
         footer_locators = FooterLocators()
