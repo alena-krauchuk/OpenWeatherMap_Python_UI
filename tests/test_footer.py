@@ -363,6 +363,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.MEDIUM_LINK), \
                     "The Medium link is not present in the DOM tree"
 
+            def test_tc_01_01_47_check_presence_of_telegram_link(self, driver):
+                """Checks if the Telegram link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.TELEGRAM_LINK), \
+                    "The Telegram link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
