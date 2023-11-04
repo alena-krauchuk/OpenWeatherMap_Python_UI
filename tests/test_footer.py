@@ -720,3 +720,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.LINKEDIN_LINK), \
                     "The Linkedin link is invisible on the Main Page"
+
+            def test_tc_01_02_46_check_presence_of_medium_link(self, driver):
+                """Checks if the Medium link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.MEDIUM_LINK), \
+                    "The Medium link is invisible on the Main Page"
