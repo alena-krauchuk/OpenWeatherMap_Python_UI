@@ -29,6 +29,7 @@ class FooterLocators:
     FOOTER_SECTION = (By.CSS_SELECTOR, "#footer-website")
     GET_IT_ON_GOOGLE_PLAY_LINK = (By.CSS_SELECTOR,
                                   "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(2)")
+    GITHUB_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(6)")
     HISTORICAL_WEATHER_DATA_LINK = (By.CSS_SELECTOR,
                                     "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(2) a")
     HOW_TO_START_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(1) > a")

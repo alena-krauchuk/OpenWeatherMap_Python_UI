@@ -370,6 +370,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.TELEGRAM_LINK), \
                     "The Telegram link is not present in the DOM tree"
 
+            def test_tc_01_01_48_check_presence_of_github_link(self, driver):
+                """Checks if the GitHub link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.GITHUB_LINK), \
+                    "The GitHub link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
