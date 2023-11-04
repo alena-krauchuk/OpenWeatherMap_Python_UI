@@ -33,6 +33,7 @@ class FooterLocators:
                                     "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(2) a")
     HOW_TO_START_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(1) > a")
     LINKEDIN_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(3)")
+    MEDIUM_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(4)")
     OPENWEATHER_FOR_BUSINESS_LINK = (By.CSS_SELECTOR,
                                      "#footer-website div :nth-child(2) :nth-child(3) ul :nth-child(3) a")
     OUR_TECHNOLOGY_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(2) :nth-child(1) ul :nth-child(1) a")

@@ -356,6 +356,13 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.LINKEDIN_LINK), \
                     "The Linkedin link is not present in the DOM tree"
 
+            def test_tc_01_01_46_check_presence_of_medium_link(self, driver):
+                """Checks if the Medium link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.MEDIUM_LINK), \
+                    "The Medium link is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
