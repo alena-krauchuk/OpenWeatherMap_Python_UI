@@ -741,3 +741,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.TELEGRAM_LINK), \
                     "The Telegram link is invisible on the Main Page"
+
+            def test_tc_01_02_48_check_visibility_of_github_link(self, driver):
+                """Checks if the GitHub link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.GITHUB_LINK), \
+                    "The GitHub link is invisible on the Main Page"
