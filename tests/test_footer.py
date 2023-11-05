@@ -380,7 +380,7 @@ class TestFooter:
         class TestCookiesPanelPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_43_check_presence_of_cookies_panel(self, driver):
+            def test_tc_01_01_49_check_presence_of_cookies_panel(self, driver):
                 """Checks if the cookies panel is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -758,3 +758,13 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.GITHUB_LINK), \
                     "The GitHub link is invisible on the Main Page"
+
+        class TestCookiesPanelPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_02_49_check_visibility_of_cookies_panel(self, driver):
+                """Checks if the cookies panel is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.COOKIES_PANEL), \
+                    "The cookies panel is invisible on the Main Page"
