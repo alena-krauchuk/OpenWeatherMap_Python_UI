@@ -377,6 +377,16 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.GITHUB_LINK), \
                     "The GitHub link is not present in the DOM tree"
 
+        class TestCookiesPanelPresence:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_01_43_check_presence_of_cookies_panel(self, driver):
+                """Checks if the cookies panel is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.COOKIES_PANEL), \
+                    "The cookies panel is not present in the DOM tree"
+
     class TestFooterVisibility:
         footer_locators = FooterLocators()
 
