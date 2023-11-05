@@ -14,6 +14,7 @@ class FooterLocators:
     COMPANY_SECTION_CONTENT = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(3) div")
     CONNECT_YOUR_WEATHER_STATION_LINK = (By.CSS_SELECTOR,
                                          "#footer-website div :nth-child(2) :nth-child(1) ul :nth-child(3) a")
+    COOKIES_PANEL = (By.CSS_SELECTOR, ".stick-footer-panel")
     COPYRIGHT_ELEMENT_01 = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(4) > :nth-child(1) > :nth-child(1)")
     COPYRIGHT_ELEMENT_02 = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(4) > :nth-child(1) > :nth-child(3)")
     COPYRIGHT_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(4) > div:nth-child(1)")
