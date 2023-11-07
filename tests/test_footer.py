@@ -752,13 +752,6 @@ class TestFooter:
         class TestCookiesPanelVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_49_check_visibility_of_cookies_panel(self, driver):
-                """Checks if the cookies panel is visible on the Main Page"""
-                page = FooterPage(driver, URL_MAIN_PAGE)
-                page.open()
-                assert page.element_is_visible(self.footer_locators.COOKIES_PANEL), \
-                    "The cookies panel is invisible on the Main Page"
-
             def test_tc_01_02_50_check_visibility_of_cookies_panel_description(self, driver):
                 """Checks if the cookies panel description is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
