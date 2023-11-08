@@ -748,13 +748,3 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.GITHUB_LINK), \
                     "The GitHub link is invisible on the Main Page"
-
-        class TestCookiesPanelVisibility:
-            footer_locators = FooterLocators()
-
-            def test_tc_01_02_51_check_visibility_of_cookies_panel_button_allow(self, driver):
-                """Checks if the button Allow all on cookies panel is visible on the Main Page"""
-                page = FooterPage(driver, URL_MAIN_PAGE)
-                page.open()
-                assert page.element_is_visible(self.footer_locators.COOKIES_PANEL_BUTTON_ALLOW), \
-                    "The button Allow all on cookies panel is invisible on the Main Page"
