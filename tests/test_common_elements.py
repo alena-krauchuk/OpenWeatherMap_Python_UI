@@ -52,9 +52,16 @@ class TestCookiesPanelVisibility:
         assert page.element_is_visible(self.cookies_panel_locators.COOKIES_PANEL_DESCRIPTION), \
             "The cookies panel description is invisible on the Main Page"
 
-    def test_tc_02_02_03_check_visibility_of_cookies_panel_button_allow(self, driver):
+    def test_tc_02_02_03_check_visibility_of_allow_all_button(self, driver):
         """Checks if the button Allow all on cookies panel is visible on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert page.element_is_visible(self.cookies_panel_locators.COOKIES_PANEL_BUTTON_ALLOW), \
+        assert page.element_is_visible(self.cookies_panel_locators.ALLOW_ALL_BUTTON), \
             "The button Allow all on cookies panel is invisible on the Main Page"
+
+    def test_tc_02_02_04_check_presence_of_manage_cookies_link(self, driver):
+        """Checks if the Manage cookies link on cookies panel is visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(self.cookies_panel_locators.MANAGE_COOKIES_LINK), \
+            "The Manage cookies link on cookies panel is invisible on the Main Page"
