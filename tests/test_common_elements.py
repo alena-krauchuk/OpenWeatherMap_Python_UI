@@ -37,3 +37,10 @@ class TestCookiesPanelVisibility:
         page.open()
         assert page.element_is_visible(self.cookies_panel_locators.COOKIES_PANEL), \
             "The cookies panel is invisible on the Main Page"
+
+    def test_tc_02_02_02_check_visibility_of_cookies_panel_description(self, driver):
+        """Checks if the cookies panel description is visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(self.cookies_panel_locators.COOKIES_PANEL_DESCRIPTION), \
+            "The cookies panel description is invisible on the Main Page"
