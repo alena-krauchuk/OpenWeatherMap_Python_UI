@@ -20,12 +20,19 @@ class TestCookiesPanelPresence:
         assert page.element_is_present(self.cookies_panel_locators.COOKIES_PANEL_DESCRIPTION), \
             "The cookies panel description is not present in the DOM tree"
 
-    def test_tc_02_01_03_check_presence_of_cookies_panel_button_allow(self, driver):
-        """Checks if the button Allow all on cookies panel is present in the DOM tree"""
+    def test_tc_02_01_03_check_presence_of_button_allow_all(self, driver):
+        """Checks if the Allow all button on cookies panel is present in the DOM tree"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert page.element_is_present(self.cookies_panel_locators.COOKIES_PANEL_BUTTON_ALLOW), \
-            "The button Allow all on cookies panel is not present in the DOM tree"
+        assert page.element_is_present(self.cookies_panel_locators.ALLOW_ALL_BUTTON), \
+            "The Allow all button on cookies panel is not present in the DOM tree"
+
+    def test_tc_02_01_04_check_presence_of_manage_cookies_link(self, driver):
+        """Checks if the Manage cookies link on cookies panel is present in the DOM tree"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_present(self.cookies_panel_locators.MANAGE_COOKIES_LINK), \
+            "The Manage cookies link on cookies panel is not present in the DOM tree"
 
 
 class TestCookiesPanelVisibility:
