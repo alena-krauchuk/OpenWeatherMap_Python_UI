@@ -1,10 +1,10 @@
 from pages.footer_page import FooterPage
 from locators.footer_locators import FooterLocators
 from data.data_urls import URL_MAIN_PAGE
+from data.footer_data import FooterElementsText
 
 
 class TestFooter:
-
     class TestFooterPresence:
         footer_locators = FooterLocators()
 
@@ -748,3 +748,18 @@ class TestFooter:
                 page.open()
                 assert page.element_is_visible(self.footer_locators.GITHUB_LINK), \
                     "The GitHub link is invisible on the Main Page"
+
+    class TestFooterElementsText:
+
+        class TestProductCollectionsSectionText:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_03_01_check_text_of_product_collections_section_title(self, driver):
+                """Checks if text of the Product Collections section's title is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.PRODUCT_COLLECTIONS_SECTION_TITLE)
+                expected_text = FooterElementsText.PRODUCT_COLLECTIONS_SECTION_TITLE_TEXT
+                assert actual_text == expected_text, \
+                    f"Actual text '{actual_text}' of the Product Collections section's title " \
+                    f"does not match expected '{expected_text}' on the Main Page"
