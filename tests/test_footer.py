@@ -773,3 +773,13 @@ class TestFooter:
                 assert actual_text == expected_text, \
                     f"Actual text '{actual_text}' of the Current and Forecast APIs link " \
                     f"does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_03_check_text_of_historical_weather_data_link(self, driver):
+                """Checks if text of the Historical Weather Data link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK)
+                expected_text = FooterElementsText.HISTORICAL_WEATHER_DATA_LINK_TEXT
+                assert actual_text == expected_text, \
+                    f"Actual text '{actual_text}' of the Historical Weather Data link " \
+                    f"does not match expected '{expected_text}' on the Main Page"
