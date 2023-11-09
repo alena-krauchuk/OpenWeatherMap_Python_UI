@@ -16,6 +16,12 @@ class BasePage:
         """This method opens a browser by the provided link"""
         self.driver.get(self.url)
 
+    def go_to_element(self, element):
+        """
+        This method scrolls the page to the selected element, making it visible to the user.
+        """
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
     def element_is_present(self, locator, timeout=5):
         """
         This method expects to verify that the element is present in the DOM tree,
@@ -71,8 +77,10 @@ class BasePage:
         """
         return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
-    def go_to_element(self, element):
+    def get_text(self, locator):
         """
-        This method scrolls the page to the selected element, making it visible to the user.
+        This method get element text
+        :return: element text
         """
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        text = self.element_is_visible(locator)
+        return text.text
