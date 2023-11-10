@@ -814,4 +814,12 @@ class TestFooter:
                     f"Actual text '{actual_text}' of the Widgets link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
-
+            def test_tc_01_03_07_check_text_of_subscription_section_title(self, driver):
+                """Checks if text of the Subscription section's title is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.SUBSCRIPTION_SECTION_TITLE)
+                expected_text = FooterElementsText.SUBSCRIPTION_SECTION_TITLE_TEXT
+                assert actual_text == expected_text, \
+                    f"Actual text '{actual_text}' of the Subscription section's title " \
+                    f"does not match expected '{expected_text}' on the Main Page"
