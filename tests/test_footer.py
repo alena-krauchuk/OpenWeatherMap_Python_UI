@@ -804,4 +804,14 @@ class TestFooter:
                     f"Actual text '{actual_text}' of the Weather Dashboard link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
+            def test_tc_01_03_06_check_text_of_widgets_link(self, driver):
+                """Checks if text of the Widgets link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.WIDGETS_LINK)
+                expected_text = FooterElementsText.WIDGETS_LINK_TEXT
+                assert actual_text == expected_text, \
+                    f"Actual text '{actual_text}' of the Widgets link " \
+                    f"does not match expected '{expected_text}' on the Main Page"
+
 
