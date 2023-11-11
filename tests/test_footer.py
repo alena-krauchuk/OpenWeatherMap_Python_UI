@@ -823,3 +823,13 @@ class TestFooter:
                 assert actual_text == expected_text, \
                     f"Actual text '{actual_text}' of the Subscription section's title " \
                     f"does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_08_check_text_of_how_to_start_link(self, driver):
+                """Checks if text of the How to start link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.HOW_TO_START_LINK)
+                expected_text = FooterElementsText.HOW_TO_START_LINK_TEXT
+                assert actual_text == expected_text, \
+                    f"Actual text '{actual_text}' of the How to start link " \
+                    f"does not match expected '{expected_text}' on the Main Page"
