@@ -3,6 +3,7 @@
 
 class FooterElementsText:
     CURRENT_AND_FORECAST_APIS_LINK_TEXT = "Current and Forecast APIs"
+    FAQ_LINK_TEXT = "FAQ"
     HISTORICAL_WEATHER_DATA_LINK_TEXT = "Historical Weather Data"
     HOW_TO_START_LINK_TEXT = "How to start"
     PRICING_LINK_TEXT = "Pricing"
