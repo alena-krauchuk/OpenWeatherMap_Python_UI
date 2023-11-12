@@ -760,9 +760,8 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.PRODUCT_COLLECTIONS_SECTION_TITLE)
                 expected_text = FooterElementsText.PRODUCT_COLLECTIONS_SECTION_TITLE_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Product Collections section's title " \
-                    f"does not match expected '{expected_text}' on the Main Page"
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Product Collections " \
+                    f"section's title does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_02_check_text_of_current_and_forecast_apis_link(self, driver):
                 """Checks if text of the Current and Forecast APIs link is correct on the Main Page"""
@@ -770,9 +769,8 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK)
                 expected_text = FooterElementsText.CURRENT_AND_FORECAST_APIS_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Current and Forecast APIs link " \
-                    f"does not match expected '{expected_text}' on the Main Page"
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Current and Forecast APIs " \
+                    f"link does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_03_check_text_of_historical_weather_data_link(self, driver):
                 """Checks if text of the Historical Weather Data link is correct on the Main Page"""
@@ -780,9 +778,8 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK)
                 expected_text = FooterElementsText.HISTORICAL_WEATHER_DATA_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Historical Weather Data link " \
-                    f"does not match expected '{expected_text}' on the Main Page"
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Historical Weather Data " \
+                    f"link does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_04_check_text_of_weather_maps_link(self, driver):
                 """Checks if text of the Weather Maps link is correct on the Main Page"""
@@ -790,8 +787,7 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.WEATHER_MAPS_LINK)
                 expected_text = FooterElementsText.WEATHER_MAPS_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Weather Maps link " \
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Weather Maps link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_05_check_text_of_weather_dashboard_link(self, driver):
@@ -800,8 +796,7 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.WEATHER_DASHBOARD_LINK)
                 expected_text = FooterElementsText.WEATHER_DASHBOARD_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Weather Dashboard link " \
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Weather Dashboard link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_06_check_text_of_widgets_link(self, driver):
@@ -810,8 +805,7 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.WIDGETS_LINK)
                 expected_text = FooterElementsText.WIDGETS_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Widgets link " \
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Widgets link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_07_check_text_of_subscription_section_title(self, driver):
@@ -820,9 +814,8 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.SUBSCRIPTION_SECTION_TITLE)
                 expected_text = FooterElementsText.SUBSCRIPTION_SECTION_TITLE_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Subscription section's title " \
-                    f"does not match expected '{expected_text}' on the Main Page"
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Subscription section's " \
+                    f"title does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_08_check_text_of_how_to_start_link(self, driver):
                 """Checks if text of the How to start link is correct on the Main Page"""
@@ -830,8 +823,7 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.HOW_TO_START_LINK)
                 expected_text = FooterElementsText.HOW_TO_START_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the How to start link " \
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the How to start link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_09_check_text_of_pricing_link(self, driver):
@@ -840,8 +832,7 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.PRICING_LINK)
                 expected_text = FooterElementsText.PRICING_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Pricing link " \
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Pricing link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_10_check_text_of_subscribe_for_free_link(self, driver):
@@ -850,8 +841,7 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK)
                 expected_text = FooterElementsText.SUBSCRIBE_FOR_FREE_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Subscribe for free link " \
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Subscribe for free link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_11_check_text_of_faq_link(self, driver):
@@ -860,8 +850,7 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.FAQ_LINK)
                 expected_text = FooterElementsText.FAQ_LINK_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the FAQ link " \
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the FAQ link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_12_check_text_of_technologies_section_title(self, driver):
@@ -870,9 +859,8 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.TECHNOLOGIES_SECTION_TITLE)
                 expected_text = FooterElementsText.TECHNOLOGIES_SECTION_TITLE_TEXT
-                assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Technologies section's title " \
-                    f"does not match expected '{expected_text}' on the Main Page"
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Technologies section's " \
+                    f"title does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_13_check_text_of_our_technology_link(self, driver):
                 """Checks if text of the Our technology link is correct on the Main Page"""
@@ -880,6 +868,15 @@ class TestFooter:
                 page.open()
                 actual_text = page.get_text(self.footer_locators.OUR_TECHNOLOGY_LINK)
                 expected_text = FooterElementsText.OUR_TECHNOLOGY_LINK_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Our technology link " \
+                    f"does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_14_check_text_of_accuracy_and_quality_of_weather_data_link(self, driver):
+                """Checks if text of the Accuracy and quality of weather data link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK)
+                expected_text = FooterElementsText.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK_TEXT
                 assert actual_text == expected_text, \
-                    f"Actual text '{actual_text}' of the Our technology link " \
+                    f"Actual text '{actual_text}' of the Accuracy and quality of weather data link " \
                     f"does not match expected '{expected_text}' on the Main Page"
