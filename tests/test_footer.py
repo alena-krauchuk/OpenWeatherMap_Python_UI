@@ -880,3 +880,13 @@ class TestFooter:
                 assert actual_text == expected_text, \
                     f"Actual text '{actual_text}' of the Accuracy and quality of weather data link " \
                     f"does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_15_check_text_of_connect_your_weather_station_link(self, driver):
+                """Checks if text of the Connect your weather station link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.CONNECT_YOUR_WEATHER_STATION_LINK)
+                expected_text = FooterElementsText.CONNECT_YOUR_WEATHER_STATION_LINK_TEXT
+                assert actual_text == expected_text, \
+                    f"Actual text '{actual_text}' of the Connect your weather station link " \
+                    f"does not match expected '{expected_text}' on the Main Page"

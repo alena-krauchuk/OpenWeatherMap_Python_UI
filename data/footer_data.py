@@ -3,6 +3,7 @@
 
 class FooterElementsText:
     ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK_TEXT = "Accuracy and quality of weather data"
+    CONNECT_YOUR_WEATHER_STATION_LINK_TEXT = "Connect your weather station"
     CURRENT_AND_FORECAST_APIS_LINK_TEXT = "Current and Forecast APIs"
     FAQ_LINK_TEXT = "FAQ"
     HISTORICAL_WEATHER_DATA_LINK_TEXT = "Historical Weather Data"
