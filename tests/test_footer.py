@@ -863,3 +863,13 @@ class TestFooter:
                 assert actual_text == expected_text, \
                     f"Actual text '{actual_text}' of the FAQ link " \
                     f"does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_12_check_text_of_technologies_section_title(self, driver):
+                """Checks if text of the Technologies section's title is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.TECHNOLOGIES_SECTION_TITLE)
+                expected_text = FooterElementsText.TECHNOLOGIES_SECTION_TITLE_TEXT
+                assert actual_text == expected_text, \
+                    f"Actual text '{actual_text}' of the Technologies section's title " \
+                    f"does not match expected '{expected_text}' on the Main Page"
