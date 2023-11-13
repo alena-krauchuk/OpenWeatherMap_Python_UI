@@ -906,3 +906,12 @@ class TestFooter:
                 expected_text = FooterElementsText.TERMS_AND_CONDITIONS_SECTION_TITLE_TEXT
                 assert actual_text == expected_text, f"Actual text '{actual_text}' of the Terms & Conditions " \
                     f"section's title does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_17_check_text_of_terms_and_conditions_of_sale_link(self, driver):
+                """Checks if text of the Terms and conditions of sale link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.TERMS_AND_CONDITIONS_OF_SALE_LINK)
+                expected_text = FooterElementsText.TERMS_AND_CONDITIONS_OF_SALE_LINK_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Terms and conditions " \
+                    f"of sale link does not match expected '{expected_text}' on the Main Page"

@@ -14,6 +14,7 @@ class FooterElementsText:
     SUBSCRIBE_FOR_FREE_LINK_TEXT = "Subscribe for free"
     SUBSCRIPTION_SECTION_TITLE_TEXT = "Subscription"
     TECHNOLOGIES_SECTION_TITLE_TEXT = "Technologies"
+    TERMS_AND_CONDITIONS_OF_SALE_LINK_TEXT = "Terms and conditions of sale"
     TERMS_AND_CONDITIONS_SECTION_TITLE_TEXT = "Terms & Conditions"
     WEATHER_DASHBOARD_LINK_TEXT = "Weather Dashboard"
     WEATHER_MAPS_LINK_TEXT = "Weather Maps"
