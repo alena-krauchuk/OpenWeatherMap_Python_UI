@@ -605,17 +605,24 @@ class TestFooter:
                 assert page.element_is_visible(self.footer_locators.PRIVACY_POLICY_LINK), \
                     "The Privacy Policy link is invisible on the Main Page"
 
+            def test_tc_01_02_30_check_visibility_of_website_terms_and_conditions_link(self, driver):
+                """Checks if the Website terms and conditions link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.WEBSITE_TERMS_AND_CONDITIONS_LINK), \
+                    "The Website terms and conditions link is invisible on the Main Page"
+
         class TestCompanySectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_30_check_visibility_of_company_section_title(self, driver):
+            def test_tc_01_02_31_check_visibility_of_company_section_title(self, driver):
                 """Checks if the Company section's title is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.COMPANY_SECTION_TITLE), \
                     "The Company section's title is invisible on the Main Page"
 
-            def test_tc_01_02_31_check_visibility_of_company_section_content(self, driver):
+            def test_tc_01_02_32_check_visibility_of_company_section_content(self, driver):
                 """Checks if the Company section's content is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -625,28 +632,28 @@ class TestFooter:
         class TestSingleLinksSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_32_check_visibility_of_about_us_link(self, driver):
+            def test_tc_01_02_33_check_visibility_of_about_us_link(self, driver):
                 """Checks if the About us link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.ABOUT_US_LINK), \
                     "The About us link is invisible on the Main Page"
 
-            def test_tc_01_02_33_check_visibility_of_blog_link(self, driver):
+            def test_tc_01_02_34_check_visibility_of_blog_link(self, driver):
                 """Checks if the Blog link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.BLOG_LINK), \
                     "The Blog link is invisible on the Main Page"
 
-            def test_tc_01_02_34_check_visibility_of_openweather_for_business_link(self, driver):
+            def test_tc_01_02_35_check_visibility_of_openweather_for_business_link(self, driver):
                 """Checks if the OpenWeather for Business link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.OPENWEATHER_FOR_BUSINESS_LINK), \
                     "The OpenWeather for Business link is invisible on the Main Page"
 
-            def test_tc_01_02_35_check_visibility_of_ask_a_question_link(self, driver):
+            def test_tc_01_02_36_check_visibility_of_ask_a_question_link(self, driver):
                 """Checks if the Ask a question link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -656,21 +663,21 @@ class TestFooter:
         class TestDownloadOpenWeatherAppSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_36_check_visibility_of_download_openweather_app_section_title(self, driver):
+            def test_tc_01_02_37_check_visibility_of_download_openweather_app_section_title(self, driver):
                 """Checks if the Download OpenWeather app section's title is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE), \
                     "The Download OpenWeather app section's title is invisible on the Main Page"
 
-            def test_tc_01_02_37_check_visibility_of_download_on_the_app_store_link(self, driver):
+            def test_tc_01_02_38_check_visibility_of_download_on_the_app_store_link(self, driver):
                 """Checks if the Download on the App Store link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_LINK), \
                     "The Download on the App Store link is invisible on the Main Page"
 
-            def test_tc_01_02_38_check_visibility_of_get_it_on_google_play_link(self, driver):
+            def test_tc_01_02_39_check_visibility_of_get_it_on_google_play_link(self, driver):
                 """Checks if the GET IT ON Google Play link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -680,14 +687,14 @@ class TestFooter:
         class TestRmetsSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_39_check_visibility_of_rmets_section_title(self, driver):
+            def test_tc_01_02_40_check_visibility_of_rmets_section_title(self, driver):
                 """Checks if the RMetS section's title is invisible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_not_visible(self.footer_locators.RMETS_SECTION_TITLE), \
                     "The RMetS section's title is visible on the Main Page"
 
-            def test_tc_01_02_40_check_visibility_of_rmets_element(self, driver):
+            def test_tc_01_02_41_check_visibility_of_rmets_element(self, driver):
                 """Checks if the RMetS element is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -697,14 +704,14 @@ class TestFooter:
         class TestCopyrightSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_41_check_visibility_of_copyright_element_01(self, driver):
+            def test_tc_01_02_42_check_visibility_of_copyright_element_01(self, driver):
                 """Checks if the Copyright element 01 is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.COPYRIGHT_ELEMENT_01), \
                     "The Copyright element 01 is invisible on the Main Page"
 
-            def test_tc_01_02_42_check_visibility_of_copyright_element_02(self, driver):
+            def test_tc_01_02_43_check_visibility_of_copyright_element_02(self, driver):
                 """Checks if the Copyright element 02 is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -714,42 +721,42 @@ class TestFooter:
         class TestSocialMediaSectionVisibility:
             footer_locators = FooterLocators()
 
-            def test_tc_01_02_43_check_visibility_of_facebook_link(self, driver):
+            def test_tc_01_02_44_check_visibility_of_facebook_link(self, driver):
                 """Checks if the Facebook link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.FACEBOOK_LINK), \
                     "The Facebook link is invisible on the Main Page"
 
-            def test_tc_01_02_44_check_visibility_of_twitter_link(self, driver):
+            def test_tc_01_02_45_check_visibility_of_twitter_link(self, driver):
                 """Checks if the Twitter link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.TWITTER_LINK), \
                     "The Twitter link is invisible on the Main Page"
 
-            def test_tc_01_02_45_check_visibility_of_linkedin_link(self, driver):
+            def test_tc_01_02_46_check_visibility_of_linkedin_link(self, driver):
                 """Checks if the Linkedin link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.LINKEDIN_LINK), \
                     "The Linkedin link is invisible on the Main Page"
 
-            def test_tc_01_02_46_check_visibility_of_medium_link(self, driver):
+            def test_tc_01_02_47_check_visibility_of_medium_link(self, driver):
                 """Checks if the Medium link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.MEDIUM_LINK), \
                     "The Medium link is invisible on the Main Page"
 
-            def test_tc_01_02_47_check_visibility_of_telegram_link(self, driver):
+            def test_tc_01_02_48_check_visibility_of_telegram_link(self, driver):
                 """Checks if the Telegram link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_visible(self.footer_locators.TELEGRAM_LINK), \
                     "The Telegram link is invisible on the Main Page"
 
-            def test_tc_01_02_48_check_visibility_of_github_link(self, driver):
+            def test_tc_01_02_49_check_visibility_of_github_link(self, driver):
                 """Checks if the GitHub link is visible on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
