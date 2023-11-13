@@ -64,4 +64,6 @@ class FooterLocators:
     TWITTER_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(2)")
     WEATHER_DASHBOARD_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(4) a")
     WEATHER_MAPS_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(3) a")
+    WEBSITE_TERMS_AND_CONDITIONS_LINK = (By.CSS_SELECTOR,
+                                         "#footer-website > div > :nth-child(2) > :nth-child(2) ul :nth-child(3) a")
     WIDGETS_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(5) a")

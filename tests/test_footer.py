@@ -226,17 +226,24 @@ class TestFooter:
                 assert page.element_is_present(self.footer_locators.PRIVACY_POLICY_LINK), \
                     "The Privacy Policy link is not present in the DOM tree"
 
+            def test_tc_01_01_30_check_presence_of_website_terms_and_conditions_link(self, driver):
+                """Checks if the Website terms and conditions link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.WEBSITE_TERMS_AND_CONDITIONS_LINK), \
+                    "The Website terms and conditions link is not present in the DOM tree"
+
         class TestCompanySectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_30_check_presence_of_company_section_title(self, driver):
+            def test_tc_01_01_31_check_presence_of_company_section_title(self, driver):
                 """Checks if the Company section's title is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.COMPANY_SECTION_TITLE), \
                     "The Company section's title is not present in the DOM tree"
 
-            def test_tc_01_01_31_check_presence_of_company_section_content(self, driver):
+            def test_tc_01_01_32_check_presence_of_company_section_content(self, driver):
                 """Checks if the Company section's content is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -246,28 +253,28 @@ class TestFooter:
         class TestSingleLinksSectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_32_check_presence_of_about_us_link(self, driver):
+            def test_tc_01_01_33_check_presence_of_about_us_link(self, driver):
                 """Checks if the About us link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.ABOUT_US_LINK), \
                     "The About us link is not present in the DOM tree"
 
-            def test_tc_01_01_33_check_presence_of_blog_link(self, driver):
+            def test_tc_01_01_34_check_presence_of_blog_link(self, driver):
                 """Checks if the Blog link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.BLOG_LINK), \
                     "The Blog link is not present in the DOM tree"
 
-            def test_tc_01_01_34_check_presence_of_openweather_for_business_link(self, driver):
+            def test_tc_01_01_35_check_presence_of_openweather_for_business_link(self, driver):
                 """Checks if the OpenWeather for Business link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.OPENWEATHER_FOR_BUSINESS_LINK), \
                     "The OpenWeather for Business link is not present in the DOM tree"
 
-            def test_tc_01_01_35_check_presence_of_ask_a_question_link(self, driver):
+            def test_tc_01_01_36_check_presence_of_ask_a_question_link(self, driver):
                 """Checks if the Ask a question link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -277,21 +284,21 @@ class TestFooter:
         class TestDownloadOpenWeatherAppSectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_36_check_presence_of_download_openweather_app_section_title(self, driver):
+            def test_tc_01_01_37_check_presence_of_download_openweather_app_section_title(self, driver):
                 """Checks if the Download OpenWeather app section's title is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE), \
                     "The Download OpenWeather app section's title is not present in the DOM tree"
 
-            def test_tc_01_01_37_check_presence_of_download_on_the_app_store_link(self, driver):
+            def test_tc_01_01_38_check_presence_of_download_on_the_app_store_link(self, driver):
                 """Checks if the Download on the App Store link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_LINK), \
                     "The Download on the App Store link is not present in the DOM tree"
 
-            def test_tc_01_01_38_check_presence_of_get_it_on_google_play_link(self, driver):
+            def test_tc_01_01_39_check_presence_of_get_it_on_google_play_link(self, driver):
                 """Checks if the GET IT ON Google Play link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -301,14 +308,14 @@ class TestFooter:
         class TestRmetsSectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_39_check_presence_of_rmets_section_title(self, driver):
+            def test_tc_01_01_40_check_presence_of_rmets_section_title(self, driver):
                 """Checks if the RMetS section's title is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.RMETS_SECTION_TITLE), \
                     "The RMetS section's title is not present in the DOM tree"
 
-            def test_tc_01_01_40_check_presence_of_rmets_element(self, driver):
+            def test_tc_01_01_41_check_presence_of_rmets_element(self, driver):
                 """Checks if the RMetS element is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -318,14 +325,14 @@ class TestFooter:
         class TestCopyrightSectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_41_check_presence_of_copyright_element_01(self, driver):
+            def test_tc_01_01_42_check_presence_of_copyright_element_01(self, driver):
                 """Checks if the Copyright element 01 is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.COPYRIGHT_ELEMENT_01), \
                     "The Copyright element 01 is not present in the DOM tree"
 
-            def test_tc_01_01_42_check_presence_of_copyright_element_02(self, driver):
+            def test_tc_01_01_43_check_presence_of_copyright_element_02(self, driver):
                 """Checks if the Copyright element 02 is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -335,42 +342,42 @@ class TestFooter:
         class TestSocialMediaSectionPresence:
             footer_locators = FooterLocators()
 
-            def test_tc_01_01_43_check_presence_of_facebook_link(self, driver):
+            def test_tc_01_01_44_check_presence_of_facebook_link(self, driver):
                 """Checks if the Facebook link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.FACEBOOK_LINK), \
                     "The Facebook link is not present in the DOM tree"
 
-            def test_tc_01_01_44_check_presence_of_twitter_link(self, driver):
+            def test_tc_01_01_45_check_presence_of_twitter_link(self, driver):
                 """Checks if the Twitter link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.TWITTER_LINK), \
                     "The Twitter link is not present in the DOM tree"
 
-            def test_tc_01_01_45_check_presence_of_linkedin_link(self, driver):
+            def test_tc_01_01_46_check_presence_of_linkedin_link(self, driver):
                 """Checks if the Linkedin link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.LINKEDIN_LINK), \
                     "The Linkedin link is not present in the DOM tree"
 
-            def test_tc_01_01_46_check_presence_of_medium_link(self, driver):
+            def test_tc_01_01_47_check_presence_of_medium_link(self, driver):
                 """Checks if the Medium link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.MEDIUM_LINK), \
                     "The Medium link is not present in the DOM tree"
 
-            def test_tc_01_01_47_check_presence_of_telegram_link(self, driver):
+            def test_tc_01_01_48_check_presence_of_telegram_link(self, driver):
                 """Checks if the Telegram link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
                 assert page.element_is_present(self.footer_locators.TELEGRAM_LINK), \
                     "The Telegram link is not present in the DOM tree"
 
-            def test_tc_01_01_48_check_presence_of_github_link(self, driver):
+            def test_tc_01_01_49_check_presence_of_github_link(self, driver):
                 """Checks if the GitHub link is present in the DOM tree"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
@@ -917,6 +924,15 @@ class TestFooter:
                     f"of sale link does not match expected '{expected_text}' on the Main Page"
 
             def test_tc_01_03_18_check_text_of_privacy_policy_link(self, driver):
+                """Checks if text of the Privacy Policy link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.PRIVACY_POLICY_LINK)
+                expected_text = FooterElementsText.PRIVACY_POLICY_LINK_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Privacy Policy link " \
+                    f"does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_19_check_text_of_privacy_policy_link(self, driver):
                 """Checks if text of the Privacy Policy link is correct on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
