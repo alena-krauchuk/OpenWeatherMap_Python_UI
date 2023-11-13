@@ -19,4 +19,5 @@ class FooterElementsText:
     TERMS_AND_CONDITIONS_SECTION_TITLE_TEXT = "Terms & Conditions"
     WEATHER_DASHBOARD_LINK_TEXT = "Weather Dashboard"
     WEATHER_MAPS_LINK_TEXT = "Weather Maps"
+    WEBSITE_TERMS_AND_CONDITIONS_LINK_TEXT = "Website terms and conditions"
     WIDGETS_LINK_TEXT = "Widgets"

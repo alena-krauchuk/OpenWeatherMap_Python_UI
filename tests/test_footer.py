@@ -939,11 +939,11 @@ class TestFooter:
                 assert actual_text == expected_text, f"Actual text '{actual_text}' of the Privacy Policy link " \
                     f"does not match expected '{expected_text}' on the Main Page"
 
-            def test_tc_01_03_19_check_text_of_privacy_policy_link(self, driver):
-                """Checks if text of the Privacy Policy link is correct on the Main Page"""
+            def test_tc_01_03_19_check_text_of_website_terms_and_conditions_link(self, driver):
+                """Checks if text of the Website terms and conditions link is correct on the Main Page"""
                 page = FooterPage(driver, URL_MAIN_PAGE)
                 page.open()
-                actual_text = page.get_text(self.footer_locators.PRIVACY_POLICY_LINK)
-                expected_text = FooterElementsText.PRIVACY_POLICY_LINK_TEXT
-                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Privacy Policy link " \
-                    f"does not match expected '{expected_text}' on the Main Page"
+                actual_text = page.get_text(self.footer_locators.WEBSITE_TERMS_AND_CONDITIONS_LINK)
+                expected_text = FooterElementsText.WEBSITE_TERMS_AND_CONDITIONS_LINK_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Website terms " \
+                    f"and conditions link does not match expected '{expected_text}' on the Main Page"
