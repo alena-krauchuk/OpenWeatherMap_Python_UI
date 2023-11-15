@@ -15,6 +15,7 @@ class FooterElementsText:
     FAQ_LINK_TEXT = "FAQ"
     HISTORICAL_WEATHER_DATA_LINK_TEXT = "Historical Weather Data"
     HOW_TO_START_LINK_TEXT = "How to start"
+    OPENWEATHER_FOR_BUSINESS_LINK_TEXT = "OpenWeather for Business"
     OUR_TECHNOLOGY_LINK_TEXT = "Our technology"
     PRICING_LINK_TEXT = "Pricing"
     PRIVACY_POLICY_LINK_TEXT = "Privacy Policy"
