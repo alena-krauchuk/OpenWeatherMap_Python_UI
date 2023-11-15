@@ -998,3 +998,12 @@ class TestFooter:
                 expected_text = FooterElementsText.OPENWEATHER_FOR_BUSINESS_LINK_TEXT
                 assert actual_text == expected_text, f"Actual text '{actual_text}' of the OpenWeather for Business " \
                     f"link does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_25_check_text_of_ask_a_question_link(self, driver):
+                """Checks if text of the Ask a question link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.ASK_A_QUESTION_LINK)
+                expected_text = FooterElementsText.ASK_A_QUESTION_LINK_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Ask a question link " \
+                    f"does not match expected '{expected_text}' on the Main Page"
