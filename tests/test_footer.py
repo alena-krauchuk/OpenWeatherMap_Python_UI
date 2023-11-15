@@ -968,3 +968,15 @@ class TestFooter:
                 expected_text = FooterElementsText.COMPANY_SECTION_CONTENT_TEXT
                 assert actual_text == expected_text, f"Actual text '{actual_text}' of the Company section's content " \
                     f"does not match expected '{expected_text}' on the Main Page"
+
+        class TestSingleLinksSectionText:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_03_22_check_text_of_about_us_link(self, driver):
+                """Checks if text of the About us link is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.ABOUT_US_LINK)
+                expected_text = FooterElementsText.ABOUT_US_LINK_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the About us link " \
+                    f"does not match expected '{expected_text}' on the Main Page"
