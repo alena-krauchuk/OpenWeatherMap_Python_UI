@@ -4,6 +4,7 @@
 class FooterElementsText:
     ABOUT_US_LINK_TEXT = "About us"
     ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK_TEXT = "Accuracy and quality of weather data"
+    BLOG_LINK_TEXT = "Blog"
     COMPANY_SECTION_CONTENT_TEXT = "OpenWeather is a team of IT experts and data scientists that has been practising " \
                                    "deep weather data science. For each point on the globe, OpenWeather provides " \
                                    "historical, current and forecasted weather data via light-speed APIs. " \
