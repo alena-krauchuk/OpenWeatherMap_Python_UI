@@ -1019,3 +1019,15 @@ class TestFooter:
                 expected_text = FooterElementsText.DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE_TEXT
                 assert actual_text == expected_text, f"Actual text '{actual_text}' of the Download OpenWeather app " \
                     f"section's title does not match expected '{expected_text}' on the Main Page"
+
+        class TestCopyrightSectionText:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_03_27_check_text_of_copyright_element_01(self, driver):
+                """Checks if text of the Copyright element 01 is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.COPYRIGHT_ELEMENT_01)
+                expected_text = FooterElementsText.COPYRIGHT_ELEMENT_01_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Copyright element 01 " \
+                    f"does not match expected '{expected_text}' on the Main Page"
