@@ -1031,3 +1031,12 @@ class TestFooter:
                 expected_text = FooterElementsText.COPYRIGHT_ELEMENT_01_TEXT
                 assert actual_text == expected_text, f"Actual text '{actual_text}' of the Copyright element 01 " \
                     f"does not match expected '{expected_text}' on the Main Page"
+
+            def test_tc_01_03_28_check_text_of_copyright_element_02(self, driver):
+                """Checks if text of the Copyright element 02 is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.COPYRIGHT_ELEMENT_02)
+                expected_text = FooterElementsText.COPYRIGHT_ELEMENT_02_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Copyright element 02 " \
+                    f"does not match expected '{expected_text}' on the Main Page"

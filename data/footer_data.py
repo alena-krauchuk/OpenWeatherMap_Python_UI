@@ -13,6 +13,7 @@ class FooterElementsText:
     COMPANY_SECTION_TITLE_TEXT = "Company"
     CONNECT_YOUR_WEATHER_STATION_LINK_TEXT = "Connect your weather station"
     COPYRIGHT_ELEMENT_01_TEXT = "Supplier of Achilles UVDB community"
+    COPYRIGHT_ELEMENT_02_TEXT = "© 2012 — 2023 OpenWeather ® All rights reserved"
     CURRENT_AND_FORECAST_APIS_LINK_TEXT = "Current and Forecast APIs"
     DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE_TEXT = "Download OpenWeather app"
     FAQ_LINK_TEXT = "FAQ"
