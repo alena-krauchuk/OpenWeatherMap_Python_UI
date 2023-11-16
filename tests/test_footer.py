@@ -1007,3 +1007,15 @@ class TestFooter:
                 expected_text = FooterElementsText.ASK_A_QUESTION_LINK_TEXT
                 assert actual_text == expected_text, f"Actual text '{actual_text}' of the Ask a question link " \
                     f"does not match expected '{expected_text}' on the Main Page"
+
+        class TestDownloadOpenWeatherAppSectionText:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_03_26_check_text_of_download_openweather_app_section_title(self, driver):
+                """Checks if text of the Download OpenWeather app section's title is correct on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                actual_text = page.get_text(self.footer_locators.DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE)
+                expected_text = FooterElementsText.DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE_TEXT
+                assert actual_text == expected_text, f"Actual text '{actual_text}' of the Download OpenWeather app " \
+                    f"section's title does not match expected '{expected_text}' on the Main Page"

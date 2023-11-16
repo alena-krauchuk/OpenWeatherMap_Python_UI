@@ -13,6 +13,7 @@ class FooterElementsText:
     COMPANY_SECTION_TITLE_TEXT = "Company"
     CONNECT_YOUR_WEATHER_STATION_LINK_TEXT = "Connect your weather station"
     CURRENT_AND_FORECAST_APIS_LINK_TEXT = "Current and Forecast APIs"
+    DOWNLOAD_OPENWEATHER_APP_SECTION_TITLE_TEXT = "Download OpenWeather app"
     FAQ_LINK_TEXT = "FAQ"
     HISTORICAL_WEATHER_DATA_LINK_TEXT = "Historical Weather Data"
     HOW_TO_START_LINK_TEXT = "How to start"
