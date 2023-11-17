@@ -1059,3 +1059,10 @@ class TestFooter:
                 page.open()
                 assert page.element_is_present(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_IMAGE), \
                     "An image in the GET IT ON Google Play link is not present in the DOM tree"
+
+            def test_tc_01_04_03_check_image_visibility_in_download_on_the_app_store_link(self, driver):
+                """Checks if an image in the Download on the App Store link is visible on the Main Page"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_visible(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_IMAGE), \
+                    "An image in the Download on the App Store link is invisible on the Main Page"
