@@ -1040,3 +1040,17 @@ class TestFooter:
                 expected_text = FooterElementsText.COPYRIGHT_ELEMENT_02_TEXT
                 assert actual_text == expected_text, f"Actual text '{actual_text}' of the Copyright element 02 " \
                     f"does not match expected '{expected_text}' on the Main Page"
+
+    class TestFooterElementsImage:
+
+        class TestDownloadOpenWeatherAppSectionImages:
+            footer_locators = FooterLocators()
+
+            def test_tc_01_04_01_check_image_presence_in_download_on_the_app_store_link(self, driver):
+                """Checks if an image in the Download on the App Store link is present in the DOM tree"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.element_is_present(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_IMAGE), \
+                    "An image in the Download on the App Store link is not present in the DOM tree"
+
+
