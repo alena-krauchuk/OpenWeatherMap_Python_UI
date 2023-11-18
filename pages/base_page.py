@@ -84,3 +84,17 @@ class BasePage:
         """
         text = self.element_is_visible(locator)
         return text.text
+
+    def find_element(self, locator):
+        """
+        This method find element on the page
+        :return: element
+        """
+        return self.driver.find_element(*locator)
+
+    def get_image_src(self, locator):
+        """
+        This method get attribute "src" of the element
+        :return: attribute "src"
+        """
+        return self.driver.find_element(*locator).get_attribute("src")
