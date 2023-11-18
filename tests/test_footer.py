@@ -1079,3 +1079,11 @@ class TestFooter:
                 assert page.get_image_src(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_IMAGE) == \
                        FooterImageUrls.DOWNLOAD_ON_THE_APP_STORE_IMAGE_URL, "The image in the Download on the App " \
                                                                             "Store link is incorrect"
+
+            def test_tc_01_04_06_check_image_correctness_in_get_it_on_google_play_link(self, driver):
+                """Checks if the image in the GET IT ON Google Play link is correct"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.get_image_src(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_IMAGE) == \
+                       FooterImageUrls.GET_IT_ON_GOOGLE_PLAY_IMAGE_URL, "The image in the GET IT ON Google Play " \
+                                                                        "link is incorrect"
