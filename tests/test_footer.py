@@ -1087,3 +1087,10 @@ class TestFooter:
                 assert page.get_image_src(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_IMAGE) == \
                        FooterImageUrls.GET_IT_ON_GOOGLE_PLAY_IMAGE_URL, "The image in the GET IT ON Google Play " \
                                                                         "link is incorrect"
+
+            def test_tc_01_04_07_check_image_correctness_in_rmets_element(self, driver):
+                """Checks if the image in the RMetS element is correct"""
+                page = FooterPage(driver, URL_MAIN_PAGE)
+                page.open()
+                assert page.get_image_src(self.footer_locators.RMETS_ELEMENT) == FooterImageUrls.RMETS_IMAGE_URL, \
+                       "The image in the RMetS element is incorrect"
