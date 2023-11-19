@@ -1099,14 +1099,21 @@ class TestFooterElementsImage:
         assert page.element_is_present(self.footer_locators.RMETS_IMAGE), "An image in the RMetS element " \
                                                                           "is not present in the DOM tree"
 
-    def test_tc_01_04_08_check_image_correctness_in_rmets_element(self, driver):
+    def test_tc_01_04_08_check_image_visibility_in_rmets_element(self, driver):
+        """Checks if an image in the RMetS element is visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(self.footer_locators.RMETS_IMAGE), "An image in the RMetS element " \
+                                                                          "is invisible on the Main Page"
+
+    def test_tc_01_04_09_check_image_correctness_in_rmets_element(self, driver):
         """Checks if the image in the RMetS element is correct"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.get_image_src(self.footer_locators.RMETS_IMAGE) == FooterImageUrls.RMETS_IMAGE_URL, \
                "The image in the RMetS element is incorrect"
 
-    def test_tc_01_04_09_check_image_correctness_in_facebook_link(self, driver):
+    def test_tc_01_04_10_check_image_correctness_in_facebook_link(self, driver):
         """Checks if the image in the Facebook link is correct"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
