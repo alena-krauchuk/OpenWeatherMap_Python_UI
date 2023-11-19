@@ -1120,7 +1120,14 @@ class TestFooterElementsImage:
         assert page.element_is_present(self.footer_locators.FACEBOOK_IMAGE), "An image in the Facebook link " \
                                                                              "is not present in the DOM tree"
 
-    def test_tc_01_04_11_check_image_correctness_in_facebook_link(self, driver):
+    def test_tc_01_04_11_check_image_visibility_in_facebook_link(self, driver):
+        """Checks if an image in the Facebook link is visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(self.footer_locators.FACEBOOK_IMAGE), "An image in the Facebook link " \
+                                                                             "is invisible on the Main Page"
+
+    def test_tc_01_04_12_check_image_correctness_in_facebook_link(self, driver):
         """Checks if the image in the Facebook link is correct"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
