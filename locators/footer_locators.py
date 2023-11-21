@@ -25,8 +25,8 @@ class FooterLocators:
                                        "#footer-website div :nth-child(3) :nth-child(1) :nth-child(2) :nth-child(1) img")
     DOWNLOAD_ON_THE_APP_STORE_LINK = (By.CSS_SELECTOR,
                                       "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(1)")
-    FACEBOOK_IMAGE = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(1) img")
-    FACEBOOK_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(1)")
+    FACEBOOK_IMAGE = (By.CSS_SELECTOR, ".social > a:nth-child(1) img")
+    FACEBOOK_LINK = (By.CSS_SELECTOR, ".social > a:nth-child(1)")
     FAQ_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(4) a")
     FOOTER_SECTION = (By.CSS_SELECTOR, "#footer-website")
     GET_IT_ON_GOOGLE_PLAY_IMAGE = (By.CSS_SELECTOR,
@@ -63,7 +63,8 @@ class FooterLocators:
     TERMS_AND_CONDITIONS_SECTION = (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(2) > div:nth-child(2)")
     TERMS_AND_CONDITIONS_SECTION_TITLE = (By.CSS_SELECTOR,
                                           "#footer-website > div > div:nth-child(2) > div:nth-child(2) p")
-    TWITTER_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(2)")
+    TWITTER_IMAGE = (By.CSS_SELECTOR, ".social > a:nth-child(2) img")
+    TWITTER_LINK = (By.CSS_SELECTOR, ".social > a:nth-child(2)")
     WEATHER_DASHBOARD_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(4) a")
     WEATHER_MAPS_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(3) a")
     WEBSITE_TERMS_AND_CONDITIONS_LINK = (By.CSS_SELECTOR,
