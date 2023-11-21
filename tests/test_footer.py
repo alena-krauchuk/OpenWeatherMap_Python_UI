@@ -1147,3 +1147,10 @@ class TestFooterElementsImage:
         page.open()
         assert page.element_is_visible(self.footer_locators.TWITTER_IMAGE), "An image in the Twitter link " \
                                                                             "is invisible on the Main Page"
+
+    def test_tc_01_04_15_check_image_correctness_in_twitter_link(self, driver):
+        """Checks if the image in the Twitter link is correct"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.get_image_src(self.footer_locators.TWITTER_IMAGE) == FooterImageUrls.TWITTER_IMAGE_URL, \
+            "The image in the Twitter link is incorrect"
