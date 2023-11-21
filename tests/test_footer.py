@@ -1133,3 +1133,10 @@ class TestFooterElementsImage:
         page.open()
         assert page.get_image_src(self.footer_locators.FACEBOOK_IMAGE) == FooterImageUrls.FACEBOOK_IMAGE_URL,\
             "The image in the Facebook link is incorrect"
+
+    def test_tc_01_04_13_check_image_presence_in_twitter_link(self, driver):
+        """Checks if an image in the Twitter link is present in the DOM tree"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_present(self.footer_locators.TWITTER_IMAGE), "An image in the Twitter link " \
+                                                                             "is not present in the DOM tree"
