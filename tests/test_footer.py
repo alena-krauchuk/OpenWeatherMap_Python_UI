@@ -1182,3 +1182,10 @@ class TestFooterElementsImage:
         page.open()
         assert page.element_is_present(self.footer_locators.MEDIUM_IMAGE), "An image in the Medium link " \
                                                                            "is not present in the DOM tree"
+
+    def test_tc_01_04_20_check_image_visibility_in_medium_link(self, driver):
+        """Checks if an image in the Medium link is visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(self.footer_locators.MEDIUM_IMAGE), "An image in the Medium link " \
+                                                                             "is invisible on the Main Page"
