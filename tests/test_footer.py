@@ -1175,3 +1175,10 @@ class TestFooterElementsImage:
         page.open()
         assert page.get_image_src(self.footer_locators.LINKEDIN_IMAGE) == FooterImageUrls.LINKEDIN_IMAGE_URL, \
             "The image in the LinkedIn link is incorrect"
+
+    def test_tc_01_04_19_check_image_presence_in_medium_link(self, driver):
+        """Checks if an image in the Medium link is present in the DOM tree"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_present(self.footer_locators.MEDIUM_IMAGE), "An image in the Medium link " \
+                                                                           "is not present in the DOM tree"
