@@ -1161,3 +1161,10 @@ class TestFooterElementsImage:
         page.open()
         assert page.element_is_present(self.footer_locators.LINKEDIN_IMAGE), "An image in the LinkedIn link " \
                                                                              "is not present in the DOM tree"
+
+    def test_tc_01_04_17_check_image_visibility_in_linkedin_link(self, driver):
+        """Checks if an image in the LinkedIn link is visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(self.footer_locators.LINKEDIN_IMAGE), "An image in the LinkedIn link " \
+                                                                            "is invisible on the Main Page"
