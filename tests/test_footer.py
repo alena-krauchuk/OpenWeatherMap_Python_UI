@@ -1188,4 +1188,11 @@ class TestFooterElementsImage:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_visible(self.footer_locators.MEDIUM_IMAGE), "An image in the Medium link " \
-                                                                             "is invisible on the Main Page"
+                                                                           "is invisible on the Main Page"
+
+    def test_tc_01_04_21_check_image_correctness_in_medium_link(self, driver):
+        """Checks if the image in the Medium link is correct"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.get_image_src(self.footer_locators.MEDIUM_IMAGE) == FooterImageUrls.MEDIUM_IMAGE_URL, \
+            "The image in the Medium link is incorrect"
