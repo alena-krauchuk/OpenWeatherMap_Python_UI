@@ -1217,3 +1217,10 @@ class TestFooterElementsImage:
         page.open()
         assert page.get_image_src(self.footer_locators.TELEGRAM_IMAGE) == FooterImageUrls.TELEGRAM_IMAGE_URL, \
             "The image in the Telegram link is incorrect"
+
+    def test_tc_01_04_25_check_image_presence_in_github_link(self, driver):
+        """Checks if an image in the Github link is present in the DOM tree"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_present(self.footer_locators.GITHUB_IMAGE), "An image in the Github link " \
+                                                                           "is not present in the DOM tree"

@@ -32,7 +32,8 @@ class FooterLocators:
     GET_IT_ON_GOOGLE_PLAY_IMAGE = (By.CSS_SELECTOR,
                                    "#footer-website div :nth-child(3) > :nth-child(1) :nth-child(2) :nth-child(2) img")
     GET_IT_ON_GOOGLE_PLAY_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(2)")
-    GITHUB_LINK = (By.CSS_SELECTOR, "#footer-website div :nth-child(4) :nth-child(2) a:nth-child(6)")
+    GITHUB_IMAGE = (By.CSS_SELECTOR, ".social > a:nth-child(6) img")
+    GITHUB_LINK = (By.CSS_SELECTOR, ".social > a:nth-child(6)")
     HISTORICAL_WEATHER_DATA_LINK = (By.CSS_SELECTOR,
                                     "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(2) a")
     HOW_TO_START_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(1) > a")
