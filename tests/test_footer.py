@@ -1203,3 +1203,10 @@ class TestFooterElementsImage:
         page.open()
         assert page.element_is_present(self.footer_locators.TELEGRAM_IMAGE), "An image in the Telegram link " \
                                                                              "is not present in the DOM tree"
+
+    def test_tc_01_04_23_check_image_visibility_in_telegram_link(self, driver):
+        """Checks if an image in the Telegram link is visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(self.footer_locators.TELEGRAM_IMAGE), "An image in the Telegram link " \
+                                                                             "is invisible on the Main Page"
