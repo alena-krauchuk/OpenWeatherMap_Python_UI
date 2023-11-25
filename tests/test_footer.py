@@ -1055,34 +1055,34 @@ class TestFooterElementsImage:
         assert page.element_is_present(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_IMAGE), \
             "An image in the Download on the App Store link is not present in the DOM tree"
 
-    def test_tc_01_04_02_check_image_presence_in_get_it_on_google_play_link(self, driver):
-        """Checks if an image in the GET IT ON Google Play link is present in the DOM tree"""
-        page = FooterPage(driver, URL_MAIN_PAGE)
-        page.open()
-        assert page.element_is_present(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_IMAGE), \
-            "An image in the GET IT ON Google Play link is not present in the DOM tree"
-
-    def test_tc_01_04_03_check_image_visibility_in_download_on_the_app_store_link(self, driver):
+    def test_tc_01_04_02_check_image_visibility_in_download_on_the_app_store_link(self, driver):
         """Checks if an image in the Download on the App Store link is visible on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_visible(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_IMAGE), \
             "An image in the Download on the App Store link is invisible on the Main Page"
 
-    def test_tc_01_04_04_check_image_visibility_in_get_it_on_google_play_link(self, driver):
-        """Checks if an image in the GET IT ON Google Play link is visible on the Main Page"""
-        page = FooterPage(driver, URL_MAIN_PAGE)
-        page.open()
-        assert page.element_is_visible(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_IMAGE), \
-            "An image in the GET IT ON Google Play link is invisible on the Main Page"
-
-    def test_tc_01_04_05_check_image_correctness_in_download_on_the_app_store_link(self, driver):
+    def test_tc_01_04_03_check_image_correctness_in_download_on_the_app_store_link(self, driver):
         """Checks if the image in the Download on the App Store link is correct"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.get_image_src(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_IMAGE) == \
                FooterImageUrls.DOWNLOAD_ON_THE_APP_STORE_IMAGE_URL, "The image in the Download on the App Store link" \
                                                                     "is incorrect"
+
+    def test_tc_01_04_04_check_image_presence_in_get_it_on_google_play_link(self, driver):
+        """Checks if an image in the GET IT ON Google Play link is present in the DOM tree"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_present(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_IMAGE), \
+            "An image in the GET IT ON Google Play link is not present in the DOM tree"
+
+    def test_tc_01_04_05_check_image_visibility_in_get_it_on_google_play_link(self, driver):
+        """Checks if an image in the GET IT ON Google Play link is visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_IMAGE), \
+            "An image in the GET IT ON Google Play link is invisible on the Main Page"
 
     def test_tc_01_04_06_check_image_correctness_in_get_it_on_google_play_link(self, driver):
         """Checks if the image in the GET IT ON Google Play link is correct"""
@@ -1238,3 +1238,14 @@ class TestFooterElementsImage:
         page.open()
         assert page.get_image_src(self.footer_locators.GITHUB_IMAGE) == FooterImageUrls.GITHUB_IMAGE_URL, \
             "The image in the GitHub link is incorrect"
+
+
+class TestFooterLinksClickability:
+    footer_locators = FooterLocators()
+
+    def test_tc_01_05_01_check_clickability_of_current_and_forecast_apis_link(self, driver):
+        """Checks if the Current and Forecast APIs link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK), \
+            "The Current and Forecast APIs link is clickable on the Main Page"
