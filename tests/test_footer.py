@@ -1248,4 +1248,11 @@ class TestFooterLinksClickability:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_clickable(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK), \
-            "The Current and Forecast APIs link is clickable on the Main Page"
+            "The Current and Forecast APIs link is not clickable on the Main Page"
+
+    def test_tc_01_05_02_check_clickability_of_historical_weather_data_link(self, driver):
+        """Checks if the Historical Weather Data link is clickable in the DOM tree"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK), \
+            "The Historical Weather Data link is not clickable in the DOM tree"
