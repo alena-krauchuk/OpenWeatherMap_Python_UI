@@ -1263,3 +1263,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.WEATHER_MAPS_LINK), \
             "The Weather Maps link is not clickable on the Main Page"
+
+    def test_tc_01_05_04_check_clickability_of_weather_dashboard_link(self, driver):
+        """Checks if the Weather Dashboard link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.WEATHER_DASHBOARD_LINK), \
+            "The Weather Dashboard link is not clickable on the Main Page"
