@@ -1270,3 +1270,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.WEATHER_DASHBOARD_LINK), \
             "The Weather Dashboard link is not clickable on the Main Page"
+
+    def test_tc_01_05_05_check_clickability_of_widgets_link(self, driver):
+        """Checks if the Widgets link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.WIDGETS_LINK), \
+            "The Widgets link is not clickable on the Main Page"
