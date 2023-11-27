@@ -1284,3 +1284,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.HOW_TO_START_LINK), \
             "The How to start link is not clickable on the Main Page"
+
+    def test_tc_01_05_07_check_clickability_of_pricing_link(self, driver):
+        """Checks if the Pricing link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.PRICING_LINK), \
+            "The Pricing link is not clickable on the Main Page"
