@@ -1312,3 +1312,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.OUR_TECHNOLOGY_LINK), \
             "The Our technology link is not clickable on the Main Page"
+
+    def test_tc_01_05_11_check_clickability_of_accuracy_and_quality_of_weather_data_link(self, driver):
+        """Checks if the Accuracy and quality of weather data link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK), \
+            "The Accuracy and quality of weather data link is not clickable on the Main Page"
