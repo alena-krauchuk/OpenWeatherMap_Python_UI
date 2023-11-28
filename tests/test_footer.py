@@ -1297,4 +1297,11 @@ class TestFooterLinksClickability:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_clickable(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK), \
-            "The Subscribe for free link is clickable on the Main Page"
+            "The Subscribe for free link is not clickable on the Main Page"
+
+    def test_tc_01_05_09_check_clickability_of_faq_link(self, driver):
+        """Checks if the FAQ link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.FAQ_LINK), \
+            "The FAQ link is not clickable on the Main Page"
