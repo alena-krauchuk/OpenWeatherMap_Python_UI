@@ -1347,3 +1347,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.WEBSITE_TERMS_AND_CONDITIONS_LINK), \
             "The Website terms and conditions link is not clickable on the Main Page"
+
+    def test_tc_01_05_16_check_clickability_of_about_us_link(self, driver):
+        """Checks if the About us link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.ABOUT_US_LINK), \
+            "The About us link is not clickable on the Main Page"
