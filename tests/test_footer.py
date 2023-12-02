@@ -1375,3 +1375,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.ASK_A_QUESTION_LINK), \
             "The Ask a question link is not clickable on the Main Page"
+
+    def test_tc_01_05_20_check_clickability_of_download_on_the_app_store_link(self, driver):
+        """Checks if the Download on the App Store link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_LINK), \
+            "The Download on the App Store link is not clickable on the Main Page"
