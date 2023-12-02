@@ -1363,8 +1363,15 @@ class TestFooterLinksClickability:
             "The Blog link is not clickable on the Main Page"
 
     def test_tc_01_05_18_check_clickability_of_openweather_for_business_link(self, driver):
-        """Checks if the OpenWeather for Business link is visible on the Main Page"""
+        """Checks if the OpenWeather for Business link is clickable on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_clickable(self.footer_locators.OPENWEATHER_FOR_BUSINESS_LINK), \
             "The OpenWeather for Business link is not clickable on the Main Page"
+
+    def test_tc_01_05_19_check_clickability_of_ask_a_question_link(self, driver):
+        """Checks if the Ask a question link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.ASK_A_QUESTION_LINK), \
+            "The Ask a question link is not clickable on the Main Page"
