@@ -1403,3 +1403,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.TWITTER_LINK), \
             "The Twitter link is not clickable on the Main Page"
+
+    def test_tc_01_05_24_check_clickability_of_linkedin_link(self, driver):
+        """Checks if the Linkedin link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.LINKEDIN_LINK), \
+            "The Linkedin link is not clickable on the Main Page"
