@@ -1389,3 +1389,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_LINK), \
             "The GET IT ON Google Play link is not clickable on the Main Page"
+
+    def test_tc_01_05_22_check_clickability_of_facebook_link(self, driver):
+        """Checks if the Facebook link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.FACEBOOK_LINK), \
+            "The Facebook link is not clickable on the Main Page"
