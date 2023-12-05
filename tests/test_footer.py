@@ -1417,3 +1417,10 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.MEDIUM_LINK), \
             "The Medium link is not clickable on the Main Page"
+
+    def test_tc_01_05_26_check_clickability_of_telegram_link(self, driver):
+        """Checks if the Telegram link is clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(self.footer_locators.TELEGRAM_LINK), \
+            "The Telegram link is clickable on the Main Page"
