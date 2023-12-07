@@ -1442,3 +1442,10 @@ class TestFooterLinksInteractivity:
         page.open()
         assert page.current_and_forecast_apis_link_is_interactive(), \
             "The Current and Forecast APIs link is non-interactive"
+
+    def test_tc_01_06_02_check_interactivity_of_historical_weather_data_link(self, driver):
+        """Checks if the Historical Weather Data link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.historical_weather_data_link_is_interactive(), \
+            "The Historical Weather Data link is non-interactive on the Main Page"
