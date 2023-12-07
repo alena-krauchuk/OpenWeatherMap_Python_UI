@@ -98,3 +98,25 @@ class BasePage:
         :return: attribute "src"
         """
         return self.driver.find_element(*locator).get_attribute("src")
+
+    def action_move_to_element(self, element):
+        """
+        This method moves the mouse cursor to the center of the selected element, simulating a hover action.
+        It can be used to test the interactivity of an element when the mouse cursor is hovering over it.
+        """
+        action = ActionChains(self.driver)
+        action.move_to_element(element)
+        action.perform()
+
+    def hover_over_element(self, locator, css_property, seconds=20):
+        """
+        This method finds a visible element using the provided locator,
+        simulates a hover action by moving the cursor to it,
+        and then returns the value of the specified CSS property of the element.
+        Locator - is used to find the element.
+        Css_property - the name of the CSS property whose value is to be returned.
+        """
+        element = self.element_is_visible(locator)  # Get the WebElement using locator
+        wait(self.driver, seconds)
+        self.action_move_to_element(element)        # Move to the element
+        return element.value_of_css_property(css_property)

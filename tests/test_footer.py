@@ -1431,3 +1431,14 @@ class TestFooterLinksClickability:
         page.open()
         assert page.element_is_clickable(self.footer_locators.GITHUB_LINK), \
             "The GitHub link is not clickable on the Main Page"
+
+
+class TestFooterLinksInteractivity:
+    footer_locators = FooterLocators()
+
+    def test_tc_01_06_01_check_interactivity_of_current_and_forecast_apis_link(self, driver):
+        """Checks if the Current and Forecast APIs link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.current_and_forecast_apis_link_is_interactive(), \
+            "The Current and Forecast APIs link is non-interactive"
