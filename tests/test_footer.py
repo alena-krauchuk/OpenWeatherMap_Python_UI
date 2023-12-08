@@ -1455,3 +1455,10 @@ class TestFooterLinksInteractivity:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.weather_maps_link_is_interactive(), "The Weather Maps link is non-interactive on the Main Page"
+
+    def test_tc_01_06_04_check_interactivity_of_weather_dashboard_link(self, driver):
+        """Checks if the Weather Dashboard link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.weather_dashboard_link_is_interactive(), \
+            "The Weather Dashboard link is non-interactive on the Main Page"
