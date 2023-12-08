@@ -1475,3 +1475,11 @@ class TestFooterLinksParameterization:
         page.open()
         assert page.element_is_present(self.footer_locators.FOOTER_SECTION), \
             "The footer is not present in the DOM tree"
+
+    @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_ELEMENTS_LOCATORS.values())
+    def test_tc_01_07_02_check_visibility_of_elements_in_footer(self, driver, element_locator):
+        """Checks if elements in Footer are visible on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(element_locator), \
+            "Elements in Footer are invisible on the Main Page"
