@@ -1483,3 +1483,11 @@ class TestFooterLinksParameterization:
         page.open()
         assert page.element_is_visible(element_locator), \
             "Elements in Footer are invisible on the Main Page"
+
+    @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_LINKS_LOCATORS.values())
+    def test_tc_01_07_03_check_clickability_of_links_in_footer(self, driver, element_locator):
+        """Checks if links in Footer are clickable on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_clickable(element_locator), \
+            "Links in Footer are not clickable on the Main Page"
