@@ -1,7 +1,8 @@
 from pages.footer_page import FooterPage
 from locators.footer_locators import FooterLocators
-from data.data_urls import URL_MAIN_PAGE, FooterImageUrls
+from data.data_urls import URL_MAIN_PAGE, FooterImageUrls, FOOTER_URLS
 from data.footer_data import FooterElementsText
+import pytest
 
 
 class TestFooterPresence:
@@ -1462,3 +1463,15 @@ class TestFooterLinksInteractivity:
         page.open()
         assert page.weather_dashboard_link_is_interactive(), \
             "The Weather Dashboard link is non-interactive on the Main Page"
+
+
+class TestFooterLinksParameterization:
+    footer_locators = FooterLocators()
+
+    @pytest.mark.parametrize('URL', FOOTER_URLS)
+    def test_tc_01_07_01_check_presence_of_footer_on_pages(self, driver, URL):
+        """Checks if the footer is present in the DOM tree on each page specified in FOOTER_URLS"""
+        page = FooterPage(driver, url=URL)
+        page.open()
+        assert page.element_is_present(self.footer_locators.FOOTER_SECTION), \
+            "The footer is not present in the DOM tree"

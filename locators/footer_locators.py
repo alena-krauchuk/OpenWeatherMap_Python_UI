@@ -28,7 +28,7 @@ class FooterLocators:
     FACEBOOK_IMAGE = (By.CSS_SELECTOR, ".social > a:nth-child(1) img")
     FACEBOOK_LINK = (By.CSS_SELECTOR, ".social > a:nth-child(1)")
     FAQ_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(1) > div:nth-child(2) :nth-child(4) a")
-    FOOTER_SECTION = (By.CSS_SELECTOR, "#footer-website")
+    FOOTER_SECTION = (By.CSS_SELECTOR, ".inner-footer-container")
     GET_IT_ON_GOOGLE_PLAY_IMAGE = (By.CSS_SELECTOR,
                                    "#footer-website div :nth-child(3) > :nth-child(1) :nth-child(2) :nth-child(2) img")
     GET_IT_ON_GOOGLE_PLAY_LINK = (By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(2)")
