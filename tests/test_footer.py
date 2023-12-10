@@ -1471,6 +1471,13 @@ class TestFooterLinksInteractivity:
         assert page.widgets_link_is_interactive(), \
             "The Widgets link is non-interactive on the Main Page"
 
+    def test_tc_01_06_06_check_interactivity_of_how_to_start_link(self, driver):
+        """Checks if the How to start link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.how_to_start_link_is_interactive(), \
+            "The How to start link is non-interactive on the Main Page"
+
 
 class TestFooterLinksParameterization:
     footer_locators = FooterLocators()

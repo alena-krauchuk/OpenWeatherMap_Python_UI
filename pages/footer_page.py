@@ -31,7 +31,13 @@ class FooterPage(BasePage):
         return element, hover_element
 
     def widgets_link_is_interactive(self):
-        """Verify the Weather Dashboard link is interactive"""
+        """Verify the Widgets link is interactive"""
         element = self.element_is_visible(self.footer_locators.WIDGETS_LINK)
         hover_element = self.hover_over_element(self.footer_locators.WIDGETS_LINK, 'pointer', 1)
+        return element, hover_element
+
+    def how_to_start_link_is_interactive(self):
+        """Verify the How to start link is interactive"""
+        element = self.element_is_visible(self.footer_locators.HOW_TO_START_LINK)
+        hover_element = self.hover_over_element(self.footer_locators.HOW_TO_START_LINK, 'pointer', 1)
         return element, hover_element
