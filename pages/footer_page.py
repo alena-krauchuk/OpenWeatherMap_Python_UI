@@ -29,3 +29,9 @@ class FooterPage(BasePage):
         element = self.element_is_visible(self.footer_locators.WEATHER_DASHBOARD_LINK)
         hover_element = self.hover_over_element(self.footer_locators.WEATHER_DASHBOARD_LINK, 'pointer', 1)
         return element, hover_element
+
+    def widgets_link_is_interactive(self):
+        """Verify the Weather Dashboard link is interactive"""
+        element = self.element_is_visible(self.footer_locators.WIDGETS_LINK)
+        hover_element = self.hover_over_element(self.footer_locators.WIDGETS_LINK, 'pointer', 1)
+        return element, hover_element

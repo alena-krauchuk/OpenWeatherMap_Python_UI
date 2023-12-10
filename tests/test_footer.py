@@ -1464,6 +1464,13 @@ class TestFooterLinksInteractivity:
         assert page.weather_dashboard_link_is_interactive(), \
             "The Weather Dashboard link is non-interactive on the Main Page"
 
+    def test_tc_01_06_05_check_interactivity_of_widgets_link(self, driver):
+        """Checks if the Widgets link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.widgets_link_is_interactive(), \
+            "The Widgets link is non-interactive on the Main Page"
+
 
 class TestFooterLinksParameterization:
     footer_locators = FooterLocators()
