@@ -1506,17 +1506,26 @@ class TestFooterElementsParameterization:
         assert page.element_is_clickable(element_locator), \
             "Links in Footer are not clickable on the Main Page"
 
-    class TestProductCollectionsSectionText:
+    class TestProductCollectionsSectionTextParameterization:
         footer_locators = FooterLocators()
 
         @pytest.mark.parametrize('URL', FOOTER_URLS)
         def test_tc_01_07_04_check_text_of_product_collections_section_title_on_pages(self, driver, URL):
-            """Checks if text of the Product Collections section's title is correct
-            on each page specified in FOOTER_URLS"""
+            """Checks if text of the Product Collections section's title is correct on each page specified in the set"""
             page = FooterPage(driver, url=URL)
             page.open()
             actual_text = page.get_text(self.footer_locators.PRODUCT_COLLECTIONS_SECTION_TITLE)
             expected_text = FooterElementsText.PRODUCT_COLLECTIONS_SECTION_TITLE_TEXT
             assert actual_text == expected_text, f"Actual text '{actual_text}' of the Product Collections " \
                                                  f"section's title does not match expected '{expected_text}' " \
-                                                 f"on the Main Page"
+                                                 f"on the page {URL}"
+
+        @pytest.mark.parametrize('URL', FOOTER_URLS)
+        def test_tc_01_07_05_check_text_of_current_and_forecast_apis_link_on_pages(self, driver, URL):
+            """Checks if text of the Current and Forecast APIs link is correct on each page specified in the set"""
+            page = FooterPage(driver, url=URL)
+            page.open()
+            actual_text = page.get_text(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK)
+            expected_text = FooterElementsText.CURRENT_AND_FORECAST_APIS_LINK_TEXT
+            assert actual_text == expected_text, f"Actual text '{actual_text}' of the Current and Forecast APIs " \
+                                                 f"link does not match expected '{expected_text}' on the page {URL}"
