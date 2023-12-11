@@ -32,4 +32,4 @@ FOOTER_URLS = ["https://openweathermap.org/",
               "https://openweathermap.org/accuracy-and-quality",
               "https://openweathermap.org/stations",
               "https://openweathermap.org/about-us"
-            ]
+               ]

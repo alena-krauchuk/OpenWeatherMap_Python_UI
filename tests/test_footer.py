@@ -1479,7 +1479,7 @@ class TestFooterLinksInteractivity:
             "The How to start link is non-interactive on the Main Page"
 
 
-class TestFooterLinksParameterization:
+class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
 
     @pytest.mark.parametrize('URL', FOOTER_URLS)
@@ -1505,3 +1505,18 @@ class TestFooterLinksParameterization:
         page.open()
         assert page.element_is_clickable(element_locator), \
             "Links in Footer are not clickable on the Main Page"
+
+    class TestProductCollectionsSectionText:
+        footer_locators = FooterLocators()
+
+        @pytest.mark.parametrize('URL', FOOTER_URLS)
+        def test_tc_01_07_04_check_text_of_product_collections_section_title_on_pages(self, driver, URL):
+            """Checks if text of the Product Collections section's title is correct
+            on each page specified in FOOTER_URLS"""
+            page = FooterPage(driver, url=URL)
+            page.open()
+            actual_text = page.get_text(self.footer_locators.PRODUCT_COLLECTIONS_SECTION_TITLE)
+            expected_text = FooterElementsText.PRODUCT_COLLECTIONS_SECTION_TITLE_TEXT
+            assert actual_text == expected_text, f"Actual text '{actual_text}' of the Product Collections " \
+                                                 f"section's title does not match expected '{expected_text}' " \
+                                                 f"on the Main Page"
