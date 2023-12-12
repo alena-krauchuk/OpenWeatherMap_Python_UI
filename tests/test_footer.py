@@ -1483,7 +1483,14 @@ class TestFooterLinksInteractivity:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert "pointer" in page.hover_over_element(self.footer_locators.PRICING_LINK, 'cursor', 2), \
-            "Failed: The cursor does not change to a 'hand' when hovering over the cart icon"
+            "The cursor does not change to a 'hand' when hovering over the Pricing link"
+
+    def test_tc_01_06_08_check_interactivity_of_subscribe_for_free_link(self, driver):
+        """Checks if the Subscribe for free link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the Subscribe for free link"
 
 
 class TestFooterElementsParameterization:
