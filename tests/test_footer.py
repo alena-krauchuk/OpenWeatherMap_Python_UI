@@ -1478,6 +1478,13 @@ class TestFooterLinksInteractivity:
         assert page.how_to_start_link_is_interactive(), \
             "The How to start link is non-interactive on the Main Page"
 
+    def test_tc_01_06_07_check_interactivity_of_pricing_link(self, driver):
+        """Checks if the Pricing link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.PRICING_LINK, 'cursor', 2), \
+            "Failed: The cursor does not change to a 'hand' when hovering over the cart icon"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
