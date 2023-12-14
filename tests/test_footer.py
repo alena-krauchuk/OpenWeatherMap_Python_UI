@@ -1168,7 +1168,7 @@ class TestFooterElementsImage:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_visible(self.footer_locators.LINKEDIN_IMAGE), "An image in the LinkedIn link " \
-                                                                            "is invisible on the Main Page"
+                                                                             "is invisible on the Main Page"
 
     def test_tc_01_04_18_check_image_correctness_in_linkedin_link(self, driver):
         """Checks if the image in the LinkedIn link is correct"""
@@ -1526,6 +1526,15 @@ class TestFooterElementsParameterization:
         page.open()
         assert page.element_is_clickable(element_locator), \
             "Links in Footer are not clickable on the Main Page"
+
+    @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_LINKS_LOCATORS.values())
+    def test_tc_01_07_06_check_interactivity_of_links_in_footer(self, driver, element_locator):
+        """Checks if links in Footer are interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        element = page.element_is_present(element_locator)
+        assert "pointer" in page.hover_over_element(element_locator, 'cursor', 2), \
+            f"The cursor does not change to a 'hand' when hovering over the {element} link"
 
     class TestProductCollectionsSectionTextParameterization:
         footer_locators = FooterLocators()
