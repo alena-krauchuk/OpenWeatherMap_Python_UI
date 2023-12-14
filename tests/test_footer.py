@@ -1469,14 +1469,14 @@ class TestFooterLinksInteractivity:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.widgets_link_is_interactive(), \
-            "The Widgets link is non-interactive on the Main Page"
+            "The cursor does not change to a 'hand' when hovering over the Widgets link"
 
     def test_tc_01_06_06_check_interactivity_of_how_to_start_link(self, driver):
         """Checks if the How to start link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.how_to_start_link_is_interactive(), \
-            "The How to start link is non-interactive on the Main Page"
+            "The cursor does not change to a 'hand' when hovering over the How to start link"
 
     def test_tc_01_06_07_check_interactivity_of_pricing_link(self, driver):
         """Checks if the Pricing link is interactive on the Main Page"""
@@ -1491,6 +1491,13 @@ class TestFooterLinksInteractivity:
         page.open()
         assert "pointer" in page.hover_over_element(self.footer_locators.SUBSCRIBE_FOR_FREE_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Subscribe for free link"
+
+    def test_tc_01_06_09_check_interactivity_of_faq_link(self, driver):
+        """Checks if the FAQ link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.FAQ_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the FAQ link"
 
 
 class TestFooterElementsParameterization:
