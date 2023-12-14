@@ -1442,27 +1442,28 @@ class TestFooterLinksInteractivity:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.current_and_forecast_apis_link_is_interactive(), \
-            "The Current and Forecast APIs link is non-interactive"
+            "The cursor does not change to a 'hand' when hovering over the Current and Forecast APIs link"
 
     def test_tc_01_06_02_check_interactivity_of_historical_weather_data_link(self, driver):
         """Checks if the Historical Weather Data link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.historical_weather_data_link_is_interactive(), \
-            "The Historical Weather Data link is non-interactive on the Main Page"
+            "The cursor does not change to a 'hand' when hovering over the Historical Weather Data link"
 
     def test_tc_01_06_03_check_interactivity_of_weather_maps_link(self, driver):
         """Checks if the Weather Maps link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert page.weather_maps_link_is_interactive(), "The Weather Maps link is non-interactive on the Main Page"
+        assert page.weather_maps_link_is_interactive(), \
+            "The cursor does not change to a 'hand' when hovering over the Weather Maps link"
 
     def test_tc_01_06_04_check_interactivity_of_weather_dashboard_link(self, driver):
         """Checks if the Weather Dashboard link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.weather_dashboard_link_is_interactive(), \
-            "The Weather Dashboard link is non-interactive on the Main Page"
+            "The cursor does not change to a 'hand' when hovering over the Weather Dashboard link"
 
     def test_tc_01_06_05_check_interactivity_of_widgets_link(self, driver):
         """Checks if the Widgets link is interactive on the Main Page"""
@@ -1512,9 +1513,18 @@ class TestFooterElementsParameterization:
             "The footer is not present in the DOM tree"
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_ELEMENTS_LOCATORS.values())
-    def test_tc_01_07_02_check_visibility_of_elements_in_footer(self, driver, element_locator):
+    def test_tc_01_07_02_01_check_visibility_of_elements_in_footer(self, driver, element_locator):
         """Checks if elements in Footer are visible on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(element_locator), \
+            "Elements in Footer are invisible on the Main Page"
+
+    @pytest.mark.parametrize('URL', FOOTER_URLS)
+    @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_ELEMENTS_LOCATORS.values())
+    def test_tc_01_07_02_02_check_visibility_of_elements_in_footer_01(self, driver, element_locator, URL):
+        """Checks if elements in Footer are visible on the Main Page"""
+        page = FooterPage(driver, url=URL)
         page.open()
         assert page.element_is_visible(element_locator), \
             "Elements in Footer are invisible on the Main Page"
@@ -1528,7 +1538,7 @@ class TestFooterElementsParameterization:
             "Links in Footer are not clickable on the Main Page"
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_LINKS_LOCATORS.values())
-    def test_tc_01_07_06_check_interactivity_of_links_in_footer(self, driver, element_locator):
+    def test_tc_01_07_04_check_interactivity_of_links_in_footer(self, driver, element_locator):
         """Checks if links in Footer are interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
@@ -1540,7 +1550,7 @@ class TestFooterElementsParameterization:
         footer_locators = FooterLocators()
 
         @pytest.mark.parametrize('URL', FOOTER_URLS)
-        def test_tc_01_07_04_check_text_of_product_collections_section_title_on_pages(self, driver, URL):
+        def test_tc_01_07_05_check_text_of_product_collections_section_title_on_pages(self, driver, URL):
             """Checks if text of the Product Collections section's title is correct on each page specified in the set"""
             page = FooterPage(driver, url=URL)
             page.open()
@@ -1551,7 +1561,7 @@ class TestFooterElementsParameterization:
                                                  f"on the page {URL}"
 
         @pytest.mark.parametrize('URL', FOOTER_URLS)
-        def test_tc_01_07_05_check_text_of_current_and_forecast_apis_link_on_pages(self, driver, URL):
+        def test_tc_01_07_06_check_text_of_current_and_forecast_apis_link_on_pages(self, driver, URL):
             """Checks if text of the Current and Forecast APIs link is correct on each page specified in the set"""
             page = FooterPage(driver, url=URL)
             page.open()
