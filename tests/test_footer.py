@@ -1518,16 +1518,17 @@ class TestFooterElementsParameterization:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_visible(element_locator), \
-            "Elements in Footer are invisible on the Main Page"
+            "Element in Footer is invisible on the Main Page"
 
-    @pytest.mark.parametrize('URL', FOOTER_URLS)
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_ELEMENTS_LOCATORS.values())
-    def test_tc_01_07_02_02_check_visibility_of_elements_in_footer_01(self, driver, element_locator, URL):
-        """Checks if elements in Footer are visible on the Main Page"""
+    @pytest.mark.parametrize('URL', FOOTER_URLS)
+    def test_tc_01_07_02_02_check_visibility_of_elements_in_footer_on_pages(self, driver, element_locator, URL):
+        """Checks if elements in Footer are visible on pages specified in the set"""
         page = FooterPage(driver, url=URL)
         page.open()
+        element = page.element_is_present(element_locator)
         assert page.element_is_visible(element_locator), \
-            "Elements in Footer are invisible on the Main Page"
+            f"Element {element.text} in Footer is invisible on the page {URL}"
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_LINKS_LOCATORS.values())
     def test_tc_01_07_03_check_clickability_of_links_in_footer(self, driver, element_locator):
@@ -1544,7 +1545,7 @@ class TestFooterElementsParameterization:
         page.open()
         element = page.element_is_present(element_locator)
         assert "pointer" in page.hover_over_element(element_locator, 'cursor', 2), \
-            f"The cursor does not change to a 'hand' when hovering over the {element} link"
+            f"The cursor does not change to a 'hand' when hovering over the {element.text} link"
 
     class TestProductCollectionsSectionTextParameterization:
         footer_locators = FooterLocators()
