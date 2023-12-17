@@ -1570,3 +1570,13 @@ class TestFooterElementsParameterization:
             expected_text = FooterElementsText.CURRENT_AND_FORECAST_APIS_LINK_TEXT
             assert actual_text == expected_text, f"Actual text '{actual_text}' of the Current and Forecast APIs " \
                                                  f"link does not match expected '{expected_text}' on the page {URL}"
+
+        @pytest.mark.parametrize('URL', FOOTER_URLS)
+        def test_tc_01_07_07_check_text_of_historical_weather_data_link_on_pages(self, driver, URL):
+            """Checks if text of the Historical Weather Data link is correct on each page specified in the set"""
+            page = FooterPage(driver, url=URL)
+            page.open()
+            actual_text = page.get_text(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK)
+            expected_text = FooterElementsText.HISTORICAL_WEATHER_DATA_LINK_TEXT
+            assert actual_text == expected_text, f"Actual text '{actual_text}' of the Historical Weather Data " \
+                                                 f"link does not match expected '{expected_text}' on the page {URL}"
