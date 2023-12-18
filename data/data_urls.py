@@ -16,7 +16,7 @@ class FooterImageUrls:
     TWITTER_IMAGE_URL = "https://openweathermap.org/themes/openweathermap/assets/img/owm_icons/icon_twitter.png"
 
 
-FOOTER_URLS = ["https://openweathermap.org/",
+footer_urls = ["https://openweathermap.org/",
               "https://openweathermap.org/guide",
               "https://openweathermap.org/api",
               "https://openweathermap.org/weather-dashboard",
