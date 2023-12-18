@@ -1598,9 +1598,25 @@ class TestFooterElementsParameterization:
                 FooterElementsText.footer_elements_text.values()
             )
         )
-        def test_tc_01_07_09_01(self, driver, element_locator, expected_text):
+        def test_tc_01_07_09_01_check_text_of_elements_in_footer(self, driver, element_locator, expected_text):
             """Check if text of elements in Footer is correct on the Main Page"""
             page = FooterPage(driver, URL_MAIN_PAGE)
             page.open()
             assert page.get_text(element_locator) == expected_text, \
                 "The text of the element does not match the expected value"
+
+        @pytest.mark.parametrize(
+            "element_locator, expected_text",
+            zip(
+                footer_locators.FOOTER_ELEMENTS_LOCATORS.values(),
+                FooterElementsText.footer_elements_text.values()
+            )
+        )
+        @pytest.mark.parametrize('URL', footer_urls)
+        def test_tc_01_07_09_02_check_text_of_elements_in_footer_on_pages(self, driver, element_locator,
+                                                                          expected_text, URL):
+            """Check if text of elements in Footer is correct on each page specified in the set"""
+            page = FooterPage(driver, url=URL)
+            page.open()
+            assert page.get_text(element_locator) == expected_text, \
+                f"The text of the element does not match the expected value on the page {URL}"
