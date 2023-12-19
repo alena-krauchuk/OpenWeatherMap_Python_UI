@@ -1507,6 +1507,14 @@ class TestFooterLinksInteractivity:
         assert "pointer" in page.hover_over_element(self.footer_locators.OUR_TECHNOLOGY_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Our technology link"
 
+    def test_tc_01_06_11_check_interactivity_of_accuracy_and_quality_of_weather_data_link(self, driver):
+        """Checks if the Accuracy and quality of weather data link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element\
+            (self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the Accuracy and quality of weather data link"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
