@@ -1500,6 +1500,13 @@ class TestFooterLinksInteractivity:
         assert "pointer" in page.hover_over_element(self.footer_locators.FAQ_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the FAQ link"
 
+    def test_tc_01_06_10_check_interactivity_of_our_technology_link(self, driver):
+        """Checks if the Our technology link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.OUR_TECHNOLOGY_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the Our technology link"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
