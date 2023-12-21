@@ -1536,6 +1536,13 @@ class TestFooterLinksInteractivity:
         assert "pointer" in page.hover_over_element(self.footer_locators.PRIVACY_POLICY_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Privacy Policy link"
 
+    def test_tc_01_06_15_check_interactivity_of_website_terms_and_conditions_link(self, driver):
+        """Checks if the Website terms and conditions link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.WEBSITE_TERMS_AND_CONDITIONS_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the Website terms and conditions link"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
