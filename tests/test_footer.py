@@ -1519,15 +1519,22 @@ class TestFooterLinksInteractivity:
         """Checks if the Connect your weather station link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert "pointer" in page.hover_over_element(self.footer_locators.CONNECT_YOUR_WEATHER_STATION_LINK), \
+        assert "pointer" in page.hover_over_element(self.footer_locators.CONNECT_YOUR_WEATHER_STATION_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Connect your weather station link"
 
     def test_tc_01_06_13_check_interactivity_of_terms_and_conditions_of_sale_link(self, driver):
         """Checks if the Terms and conditions of sale link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert "pointer" in page.hover_over_element(self.footer_locators.TERMS_AND_CONDITIONS_OF_SALE_LINK), \
+        assert "pointer" in page.hover_over_element(self.footer_locators.TERMS_AND_CONDITIONS_OF_SALE_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Terms and conditions of sale link"
+
+    def test_tc_01_06_14_check_interactivity_of_privacy_policy_link(self, driver):
+        """Checks if the Privacy Policy link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.PRIVACY_POLICY_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the Privacy Policy link"
 
 
 class TestFooterElementsParameterization:
