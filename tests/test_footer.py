@@ -1550,6 +1550,13 @@ class TestFooterLinksInteractivity:
         assert "pointer" in page.hover_over_element(self.footer_locators.ABOUT_US_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the About us link"
 
+    def test_tc_01_06_17_check_interactivity_of_blog_link(self, driver):
+        """Checks if the Blog link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.BLOG_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the Blog link"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
