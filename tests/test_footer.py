@@ -1557,6 +1557,13 @@ class TestFooterLinksInteractivity:
         assert "pointer" in page.hover_over_element(self.footer_locators.BLOG_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Blog link"
 
+    def test_tc_01_06_18_check_interactivity_of_openweather_for_business_link(self, driver):
+        """Checks if the OpenWeather for Business link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.OPENWEATHER_FOR_BUSINESS_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the OpenWeather for Business link"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
