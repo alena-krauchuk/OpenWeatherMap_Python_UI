@@ -1578,6 +1578,13 @@ class TestFooterLinksInteractivity:
         assert "pointer" in page.hover_over_element(self.footer_locators.DOWNLOAD_ON_THE_APP_STORE_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Download on the App Store link"
 
+    def test_tc_01_06_21_check_interactivity_of_get_it_on_google_play_link(self, driver):
+        """Checks if the GET IT ON Google Play link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.GET_IT_ON_GOOGLE_PLAY_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the GET IT ON Google Play link"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
