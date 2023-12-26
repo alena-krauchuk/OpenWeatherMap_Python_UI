@@ -176,3 +176,17 @@ class FooterLocators:
             (By.CSS_SELECTOR, "#footer-website > div > :nth-child(2) > :nth-child(2) ul :nth-child(3) a"),
         "WIDGETS_LINK": (By.CSS_SELECTOR, "#footer-website div :nth-child(1) :nth-child(1) ul :nth-child(5) a")
     }
+
+    FOOTER_IMAGES_LOCATORS = {
+        "DOWNLOAD_ON_THE_APP_STORE_IMAGE":
+            (By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(1) img"),
+        "FACEBOOK_IMAGE": (By.CSS_SELECTOR, ".social > a:nth-child(1) img"),
+        "GET_IT_ON_GOOGLE_PLAY_IMAGE":
+            (By.CSS_SELECTOR, "#footer-website > div > :nth-child(3) :nth-child(1) a:nth-child(2) img"),
+        "GITHUB_IMAGE": (By.CSS_SELECTOR, ".social > a:nth-child(6) img"),
+        "LINKEDIN_IMAGE": (By.CSS_SELECTOR, ".social > a:nth-child(3) img"),
+        "MEDIUM_IMAGE": (By.CSS_SELECTOR, ".social > a:nth-child(4) img"),
+        "RMETS_IMAGE": (By.CSS_SELECTOR, "#footer-website > div > div:nth-child(3) > div:nth-child(2) img"),
+        "TELEGRAM_IMAGE": (By.CSS_SELECTOR, ".social > a:nth-child(5) img"),
+        "TWITTER_IMAGE": (By.CSS_SELECTOR, ".social > a:nth-child(2) img")
+    }
