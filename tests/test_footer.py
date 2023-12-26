@@ -1639,76 +1639,87 @@ class TestFooterElementsParameterization:
         assert "pointer" in page.hover_over_element(element_locator, 'cursor', 2), \
             f"The cursor does not change to a 'hand' when hovering over the {element.text} link"
 
-    class TestProductCollectionsSectionTextParameterization:
-        footer_locators = FooterLocators()
 
-        @pytest.mark.parametrize('URL', footer_urls)
-        def test_tc_01_07_05_check_text_of_product_collections_section_title_on_pages(self, driver, URL):
-            """Checks if text of the Product Collections section's title is correct on each page specified in the set"""
-            page = FooterPage(driver, url=URL)
-            page.open()
-            actual_text = page.get_text(self.footer_locators.PRODUCT_COLLECTIONS_SECTION_TITLE)
-            expected_text = FooterElementsText.PRODUCT_COLLECTIONS_SECTION_TITLE_TEXT
-            assert actual_text == expected_text, f"Actual text '{actual_text}' of the Product Collections " \
-                                                 f"section's title does not match expected '{expected_text}' " \
-                                                 f"on the page {URL}"
+class TestElementsTextParameterization:
+    footer_locators = FooterLocators()
 
-        @pytest.mark.parametrize('URL', footer_urls)
-        def test_tc_01_07_06_check_text_of_current_and_forecast_apis_link_on_pages(self, driver, URL):
-            """Checks if text of the Current and Forecast APIs link is correct on each page specified in the set"""
-            page = FooterPage(driver, url=URL)
-            page.open()
-            actual_text = page.get_text(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK)
-            expected_text = FooterElementsText.CURRENT_AND_FORECAST_APIS_LINK_TEXT
-            assert actual_text == expected_text, f"Actual text '{actual_text}' of the Current and Forecast APIs " \
-                                                 f"link does not match expected '{expected_text}' on the page {URL}"
+    @pytest.mark.parametrize('URL', footer_urls)
+    def test_tc_01_07_05_check_text_of_product_collections_section_title_on_pages(self, driver, URL):
+        """Checks if text of the Product Collections section's title is correct on each page specified in the set"""
+        page = FooterPage(driver, url=URL)
+        page.open()
+        actual_text = page.get_text(self.footer_locators.PRODUCT_COLLECTIONS_SECTION_TITLE)
+        expected_text = FooterElementsText.PRODUCT_COLLECTIONS_SECTION_TITLE_TEXT
+        assert actual_text == expected_text, f"Actual text '{actual_text}' of the Product Collections section's " \
+                                             f"title does not match expected '{expected_text}' on the page {URL}"
 
-        @pytest.mark.parametrize('URL', footer_urls)
-        def test_tc_01_07_07_check_text_of_historical_weather_data_link_on_pages(self, driver, URL):
-            """Checks if text of the Historical Weather Data link is correct on each page specified in the set"""
-            page = FooterPage(driver, url=URL)
-            page.open()
-            actual_text = page.get_text(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK)
-            expected_text = FooterElementsText.HISTORICAL_WEATHER_DATA_LINK_TEXT
-            assert actual_text == expected_text, f"Actual text '{actual_text}' of the Historical Weather Data " \
-                                                 f"link does not match expected '{expected_text}' on the page {URL}"
+    @pytest.mark.parametrize('URL', footer_urls)
+    def test_tc_01_07_06_check_text_of_current_and_forecast_apis_link_on_pages(self, driver, URL):
+        """Checks if text of the Current and Forecast APIs link is correct on each page specified in the set"""
+        page = FooterPage(driver, url=URL)
+        page.open()
+        actual_text = page.get_text(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK)
+        expected_text = FooterElementsText.CURRENT_AND_FORECAST_APIS_LINK_TEXT
+        assert actual_text == expected_text, f"Actual text '{actual_text}' of the Current and Forecast APIs " \
+                                             f"link does not match expected '{expected_text}' on the page {URL}"
 
-        @pytest.mark.parametrize('URL', footer_urls)
-        def test_tc_01_07_08_check_text_of_weather_maps_link_on_pages(self, driver, URL):
-            """Checks if text of the Weather Maps link is correct on each page specified in the set"""
-            page = FooterPage(driver, url=URL)
-            page.open()
-            actual_text = page.get_text(self.footer_locators.WEATHER_MAPS_LINK)
-            expected_text = FooterElementsText.WEATHER_MAPS_LINK_TEXT
-            assert actual_text == expected_text, f"Actual text '{actual_text}' of the Weather Maps " \
-                                                 f"link does not match expected '{expected_text}' on the page {URL}"
+    @pytest.mark.parametrize('URL', footer_urls)
+    def test_tc_01_07_07_check_text_of_historical_weather_data_link_on_pages(self, driver, URL):
+        """Checks if text of the Historical Weather Data link is correct on each page specified in the set"""
+        page = FooterPage(driver, url=URL)
+        page.open()
+        actual_text = page.get_text(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK)
+        expected_text = FooterElementsText.HISTORICAL_WEATHER_DATA_LINK_TEXT
+        assert actual_text == expected_text, f"Actual text '{actual_text}' of the Historical Weather Data " \
+                                             f"link does not match expected '{expected_text}' on the page {URL}"
 
-        @pytest.mark.parametrize(
-            "element_locator, expected_text",
-            zip(
-                footer_locators.FOOTER_ELEMENTS_LOCATORS.values(),
-                FooterElementsText.footer_elements_text.values()
-            )
+    @pytest.mark.parametrize('URL', footer_urls)
+    def test_tc_01_07_08_check_text_of_weather_maps_link_on_pages(self, driver, URL):
+        """Checks if text of the Weather Maps link is correct on each page specified in the set"""
+        page = FooterPage(driver, url=URL)
+        page.open()
+        actual_text = page.get_text(self.footer_locators.WEATHER_MAPS_LINK)
+        expected_text = FooterElementsText.WEATHER_MAPS_LINK_TEXT
+        assert actual_text == expected_text, f"Actual text '{actual_text}' of the Weather Maps " \
+                                             f"link does not match expected '{expected_text}' on the page {URL}"
+
+    @pytest.mark.parametrize(
+        "element_locator, expected_text",
+        zip(
+            footer_locators.FOOTER_ELEMENTS_LOCATORS.values(),
+            FooterElementsText.footer_elements_text.values()
         )
-        def test_tc_01_07_09_01_check_text_of_elements_in_footer(self, driver, element_locator, expected_text):
-            """Check if text of elements in Footer is correct on the Main Page"""
-            page = FooterPage(driver, URL_MAIN_PAGE)
-            page.open()
-            assert page.get_text(element_locator) == expected_text, \
-                "The text of the element does not match the expected value"
+    )
+    def test_tc_01_07_09_01_check_text_of_elements_in_footer(self, driver, element_locator, expected_text):
+        """Check if text of elements in Footer is correct on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.get_text(element_locator) == expected_text, \
+            "The text of the element does not match the expected value"
 
-        @pytest.mark.parametrize(
-            "element_locator, expected_text",
-            zip(
-                footer_locators.FOOTER_ELEMENTS_LOCATORS.values(),
-                FooterElementsText.footer_elements_text.values()
-            )
+    @pytest.mark.parametrize(
+        "element_locator, expected_text",
+        zip(
+            footer_locators.FOOTER_ELEMENTS_LOCATORS.values(),
+            FooterElementsText.footer_elements_text.values()
         )
-        @pytest.mark.parametrize('URL', footer_urls)
-        def test_tc_01_07_09_02_check_text_of_elements_in_footer_on_pages(self, driver, element_locator,
-                                                                          expected_text, URL):
-            """Check if text of elements in Footer is correct on each page specified in the set"""
-            page = FooterPage(driver, url=URL)
-            page.open()
-            assert page.get_text(element_locator) == expected_text, \
-                f"The text of the element does not match the expected value on the page {URL}"
+    )
+    @pytest.mark.parametrize('URL', footer_urls)
+    def test_tc_01_07_09_02_check_text_of_elements_in_footer_on_pages(self, driver, element_locator,
+                                                                      expected_text, URL):
+        """Check if text of elements in Footer is correct on each page specified in the set"""
+        page = FooterPage(driver, url=URL)
+        page.open()
+        assert page.get_text(element_locator) == expected_text, \
+            f"The text of the element does not match the expected value on the page {URL}"
+
+
+class TestElementsImageParameterization:
+    footer_locators = FooterLocators()
+
+    @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_IMAGES_LOCATORS.values())
+    def test_tc_01_08_01_check_image_presence_in_elements_in_footer(self, driver, element_locator):
+        """Checks if images in elements in Footer are present in the DOM tree"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_present(element_locator), "An image is not present in the element in the DOM tree"
