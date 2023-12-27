@@ -1723,3 +1723,10 @@ class TestElementsImageParameterization:
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_present(element_locator), "An image is not present in the element in the DOM tree"
+
+    @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_IMAGES_LOCATORS.values())
+    def test_tc_01_08_02_check_image_visibility_in_elements_in_footer(self, driver, element_locator):
+        """Checks if images is visible in elements in Footer on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.element_is_visible(element_locator), "An image is invisible in the element on the Main Page"
