@@ -1592,6 +1592,13 @@ class TestFooterLinksInteractivity:
         assert "pointer" in page.hover_over_element(self.footer_locators.FACEBOOK_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Facebook link"
 
+    def test_tc_01_06_23_check_interactivity_of_twitter_link(self, driver):
+        """Checks if the Twitter link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.TWITTER_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over th Twitter link"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
