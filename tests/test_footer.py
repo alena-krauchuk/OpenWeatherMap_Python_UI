@@ -1613,12 +1613,19 @@ class TestFooterLinksInteractivity:
         assert "pointer" in page.hover_over_element(self.footer_locators.MEDIUM_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Medium link"
 
-    def test_tc_01_05_26_check_interactivity_of_telegram_link(self, driver):
+    def test_tc_01_06_26_check_interactivity_of_telegram_link(self, driver):
         """Checks if the Telegram link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert "pointer" in page.hover_over_element(self.footer_locators.TELEGRAM_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Telegram link"
+
+    def test_tc_01_06_27_check_interactivity_of_github_link(self, driver):
+        """Checks if the GitHub link is interactive on the Main Page"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert "pointer" in page.hover_over_element(self.footer_locators.GITHUB_LINK, 'cursor', 2), \
+            "The cursor does not change to a 'hand' when hovering over the GitHub link"
 
 
 class TestFooterElementsParameterization:
