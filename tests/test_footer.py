@@ -1,7 +1,7 @@
 from pages.footer_page import FooterPage
 from locators.footer_locators import FooterLocators
-from data.data_urls import URL_MAIN_PAGE, FooterImageUrls, footer_urls
-from data.footer_data import FooterElementsText
+from data.data_urls import URL_MAIN_PAGE, FooterImageUrls, footer_urls, FooterLinksUrls
+from data.footer_data import FooterElementsText, footer_links_href
 import pytest
 
 
@@ -1511,7 +1511,7 @@ class TestFooterLinksInteractivity:
         """Checks if the Accuracy and quality of weather data link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert "pointer" in page.hover_over_element\
+        assert "pointer" in page.hover_over_element \
             (self.footer_locators.ACCURACY_AND_QUALITY_OF_WEATHER_DATA_LINK, 'cursor', 2), \
             "The cursor does not change to a 'hand' when hovering over the Accuracy and quality of weather data link"
 
@@ -1519,14 +1519,16 @@ class TestFooterLinksInteractivity:
         """Checks if the Connect your weather station link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert "pointer" in page.hover_over_element(self.footer_locators.CONNECT_YOUR_WEATHER_STATION_LINK, 'cursor', 2), \
+        assert "pointer" in page.hover_over_element(self.footer_locators.CONNECT_YOUR_WEATHER_STATION_LINK, 'cursor',
+                                                    2), \
             "The cursor does not change to a 'hand' when hovering over the Connect your weather station link"
 
     def test_tc_01_06_13_check_interactivity_of_terms_and_conditions_of_sale_link(self, driver):
         """Checks if the Terms and conditions of sale link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert "pointer" in page.hover_over_element(self.footer_locators.TERMS_AND_CONDITIONS_OF_SALE_LINK, 'cursor', 2), \
+        assert "pointer" in page.hover_over_element(self.footer_locators.TERMS_AND_CONDITIONS_OF_SALE_LINK, 'cursor',
+                                                    2), \
             "The cursor does not change to a 'hand' when hovering over the Terms and conditions of sale link"
 
     def test_tc_01_06_14_check_interactivity_of_privacy_policy_link(self, driver):
@@ -1540,7 +1542,8 @@ class TestFooterLinksInteractivity:
         """Checks if the Website terms and conditions link is interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
-        assert "pointer" in page.hover_over_element(self.footer_locators.WEBSITE_TERMS_AND_CONDITIONS_LINK, 'cursor', 2), \
+        assert "pointer" in page.hover_over_element(self.footer_locators.WEBSITE_TERMS_AND_CONDITIONS_LINK, 'cursor',
+                                                    2), \
             "The cursor does not change to a 'hand' when hovering over the Website terms and conditions link"
 
     def test_tc_01_06_16_check_interactivity_of_about_us_link(self, driver):
@@ -1628,11 +1631,22 @@ class TestFooterLinksInteractivity:
             "The cursor does not change to a 'hand' when hovering over the GitHub link"
 
 
+class TestFooterLinkNavigation:
+    footer_locators = FooterLocators()
+
+    def test_tc_01_07_01_verify_href_in_current_and_forecast_apis_link(self, driver):
+        """Verify accuracy of the attribute 'href' in the Current and Forecast APIs link"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.get_current_and_forecast_apis_link_href() == footer_links_href["current_and_forecast_apis_link_href"], \
+            "The attribute 'href' of the Current and Forecast APIs link does not match the expected value"
+
+
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
 
     @pytest.mark.parametrize('URL', footer_urls)
-    def test_tc_01_07_01_check_presence_of_footer_on_pages(self, driver, URL):
+    def test_tc_01_08_01_check_presence_of_footer_on_pages(self, driver, URL):
         """Checks if the footer is present in the DOM tree on each page specified in footer_urls"""
         page = FooterPage(driver, url=URL)
         page.open()
@@ -1640,7 +1654,7 @@ class TestFooterElementsParameterization:
             "The footer is not present in the DOM tree"
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_ELEMENTS_LOCATORS.values())
-    def test_tc_01_07_02_01_check_visibility_of_elements_in_footer(self, driver, element_locator):
+    def test_tc_01_08_02_01_check_visibility_of_elements_in_footer(self, driver, element_locator):
         """Checks if elements in Footer are visible on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
@@ -1649,7 +1663,7 @@ class TestFooterElementsParameterization:
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_ELEMENTS_LOCATORS.values())
     @pytest.mark.parametrize('URL', footer_urls)
-    def test_tc_01_07_02_02_check_visibility_of_elements_in_footer_on_pages(self, driver, element_locator, URL):
+    def test_tc_01_08_02_02_check_visibility_of_elements_in_footer_on_pages(self, driver, element_locator, URL):
         """Checks if elements in Footer are visible on pages specified in the set"""
         page = FooterPage(driver, url=URL)
         page.open()
@@ -1658,7 +1672,7 @@ class TestFooterElementsParameterization:
             f"Element {element.text} in Footer is invisible on the page {URL}"
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_LINKS_LOCATORS.values())
-    def test_tc_01_07_03_check_clickability_of_links_in_footer(self, driver, element_locator):
+    def test_tc_01_08_03_check_clickability_of_links_in_footer(self, driver, element_locator):
         """Checks if links in Footer are clickable on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
@@ -1666,7 +1680,7 @@ class TestFooterElementsParameterization:
             "Links in Footer are not clickable on the Main Page"
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_LINKS_LOCATORS.values())
-    def test_tc_01_07_04_check_interactivity_of_links_in_footer(self, driver, element_locator):
+    def test_tc_01_08_04_check_interactivity_of_links_in_footer(self, driver, element_locator):
         """Checks if links in Footer are interactive on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
@@ -1679,7 +1693,7 @@ class TestElementsTextParameterization:
     footer_locators = FooterLocators()
 
     @pytest.mark.parametrize('URL', footer_urls)
-    def test_tc_01_07_05_check_text_of_product_collections_section_title_on_pages(self, driver, URL):
+    def test_tc_01_09_01_check_text_of_product_collections_section_title_on_pages(self, driver, URL):
         """Checks if text of the Product Collections section's title is correct on each page specified in the set"""
         page = FooterPage(driver, url=URL)
         page.open()
@@ -1689,7 +1703,7 @@ class TestElementsTextParameterization:
                                              f"title does not match expected '{expected_text}' on the page {URL}"
 
     @pytest.mark.parametrize('URL', footer_urls)
-    def test_tc_01_07_06_check_text_of_current_and_forecast_apis_link_on_pages(self, driver, URL):
+    def test_tc_01_09_02_check_text_of_current_and_forecast_apis_link_on_pages(self, driver, URL):
         """Checks if text of the Current and Forecast APIs link is correct on each page specified in the set"""
         page = FooterPage(driver, url=URL)
         page.open()
@@ -1699,7 +1713,7 @@ class TestElementsTextParameterization:
                                              f"link does not match expected '{expected_text}' on the page {URL}"
 
     @pytest.mark.parametrize('URL', footer_urls)
-    def test_tc_01_07_07_check_text_of_historical_weather_data_link_on_pages(self, driver, URL):
+    def test_tc_01_09_03_check_text_of_historical_weather_data_link_on_pages(self, driver, URL):
         """Checks if text of the Historical Weather Data link is correct on each page specified in the set"""
         page = FooterPage(driver, url=URL)
         page.open()
@@ -1709,7 +1723,7 @@ class TestElementsTextParameterization:
                                              f"link does not match expected '{expected_text}' on the page {URL}"
 
     @pytest.mark.parametrize('URL', footer_urls)
-    def test_tc_01_07_08_check_text_of_weather_maps_link_on_pages(self, driver, URL):
+    def test_tc_01_09_04_check_text_of_weather_maps_link_on_pages(self, driver, URL):
         """Checks if text of the Weather Maps link is correct on each page specified in the set"""
         page = FooterPage(driver, url=URL)
         page.open()
@@ -1725,7 +1739,7 @@ class TestElementsTextParameterization:
             FooterElementsText.footer_elements_text.values()
         )
     )
-    def test_tc_01_07_09_01_check_text_of_elements_in_footer(self, driver, element_locator, expected_text):
+    def test_tc_01_09_05_check_text_of_elements_in_footer(self, driver, element_locator, expected_text):
         """Check if text of elements in Footer is correct on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
@@ -1740,7 +1754,7 @@ class TestElementsTextParameterization:
         )
     )
     @pytest.mark.parametrize('URL', footer_urls)
-    def test_tc_01_07_09_02_check_text_of_elements_in_footer_on_pages(self, driver, element_locator,
+    def test_tc_01_09_03_check_text_of_elements_in_footer_on_pages(self, driver, element_locator,
                                                                       expected_text, URL):
         """Check if text of elements in Footer is correct on each page specified in the set"""
         page = FooterPage(driver, url=URL)
@@ -1753,14 +1767,14 @@ class TestElementsImageParameterization:
     footer_locators = FooterLocators()
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_IMAGES_LOCATORS.values())
-    def test_tc_01_08_01_check_image_presence_in_elements_in_footer(self, driver, element_locator):
+    def test_tc_01_10_01_check_image_presence_in_elements_in_footer(self, driver, element_locator):
         """Checks if images in elements in Footer are present in the DOM tree"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
         assert page.element_is_present(element_locator), "An image is not present in the element in the DOM tree"
 
     @pytest.mark.parametrize("element_locator", footer_locators.FOOTER_IMAGES_LOCATORS.values())
-    def test_tc_01_08_02_check_image_visibility_in_elements_in_footer(self, driver, element_locator):
+    def test_tc_01_10_02_check_image_visibility_in_elements_in_footer(self, driver, element_locator):
         """Checks if images is visible in elements in Footer on the Main Page"""
         page = FooterPage(driver, URL_MAIN_PAGE)
         page.open()
