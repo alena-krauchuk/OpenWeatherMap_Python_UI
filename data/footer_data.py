@@ -67,3 +67,8 @@ class FooterElementsText:
         "WEBSITE_TERMS_AND_CONDITIONS_LINK_TEXT": "Website terms and conditions",
         "WIDGETS_LINK_TEXT": "Widgets"
     }
+
+
+footer_links_href = {
+    "current_and_forecast_apis_link_href": "https://openweathermap.org/api#current"
+}

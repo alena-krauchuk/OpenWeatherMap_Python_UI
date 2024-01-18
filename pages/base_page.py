@@ -1,7 +1,7 @@
 import re
 from selenium.common import StaleElementReferenceException
-from selenium.webdriver.support.ui import WebDriverWait as wait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait as Wait
+from selenium.webdriver.support import expected_conditions as ec
 import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
@@ -11,6 +11,7 @@ class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
         self.url = url
+        self.timeout = 10
 
     def open(self):
         """This method opens a browser by the provided link"""
@@ -29,7 +30,7 @@ class BasePage:
         Locator - is used to find the element.
         Timeout - the duration it will wait for. The default is set to 5 seconds, but it can be modified if needed.
         """
-        return wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
+        return Wait(self.driver, timeout).until(ec.presence_of_element_located(locator))
 
     def elements_are_present(self, locator, timeout=5):
         """
@@ -38,7 +39,7 @@ class BasePage:
            Locator - is used to find the elements.
            Timeout - the duration it will wait for. The default is set to 5 seconds, but it can be modified if needed.
            """
-        return wait(self.driver, timeout).until(EC.presence_of_all_elements_located(locator))
+        return Wait(self.driver, timeout).until(ec.presence_of_all_elements_located(locator))
 
     def element_is_visible(self, locator, timeout=10):
         """
@@ -48,7 +49,7 @@ class BasePage:
         Timeout - the duration it will wait for. The default is set to 5 seconds, but it can be modified if needed.
         """
         self.go_to_element(self.element_is_present(locator))
-        return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
+        return Wait(self.driver, timeout).until(ec.visibility_of_element_located(locator))
 
     def elements_are_visible(self, locator, timeout=10):
         """
@@ -57,7 +58,7 @@ class BasePage:
         Locator - is used to find the elements.
         Timeout - the duration it will wait for. The default is set to 5 seconds, but it can be modified if needed.
         """
-        return wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
+        return Wait(self.driver, timeout).until(ec.visibility_of_all_elements_located(locator))
 
     def element_is_not_visible(self, locator, timeout=5):
         """
@@ -66,7 +67,7 @@ class BasePage:
          Locator - is used to find the element.
          Timeout - the duration it will wait for. The default is set to 5 seconds, but it can be modified if needed.
          """
-        return wait(self.driver, timeout).until(EC.invisibility_of_element_located(locator))
+        return Wait(self.driver, timeout).until(ec.invisibility_of_element_located(locator))
 
     def element_is_clickable(self, locator, timeout=5):
         """
@@ -75,7 +76,13 @@ class BasePage:
         Locator - is used to find the element.
         Timeout - the duration it will wait for. The default is set to 5 seconds, but it can be modified if needed.
         """
-        return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
+        return Wait(self.driver, timeout).until(ec.element_to_be_clickable(locator))
+
+    def element_is_present_and_clickable(self, locator):
+        with allure.step(f'Check element is visible and clickable: {locator}'):
+            return (Wait(self.driver, self.timeout).until(ec.visibility_of_element_located(locator),
+                                                          message=f"Can't find element by locator {locator}") and
+                    self.element_is_clickable(locator))
 
     def get_text(self, locator):
         """
@@ -117,6 +124,27 @@ class BasePage:
         Css_property - the name of the CSS property whose value is to be returned.
         """
         element = self.element_is_visible(locator)  # Get the WebElement using locator
-        wait(self.driver, seconds)
-        self.action_move_to_element(element)        # Move to the element
+        Wait(self.driver, seconds)
+        self.action_move_to_element(element)  # Move to the element
         return element.value_of_css_property(css_property)
+
+    def get_actual_url_of_current_page(self):
+        """
+        This method allows to get URL of the current page
+        """
+        actual_url = self.driver.current_url
+        return actual_url
+
+    def check_expected_link(self, url):
+        """An expectation for checking the current url.
+        url is the expected url, which must be an exact match returns True
+        if the url matches, false otherwise.
+        """
+        return Wait(self.driver, self.timeout).until(ec.url_to_be(url))
+
+    def get_actual_title_of_current_page(self):
+        """
+        This method allows to get a title of the current page
+        """
+        actual_title = self.driver.title
+        return actual_title
