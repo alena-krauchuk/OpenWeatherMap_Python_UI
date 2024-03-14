@@ -1641,6 +1641,13 @@ class TestFooterLinkNavigation:
         assert page.get_current_and_forecast_apis_link_href() == footer_links_href["current_and_forecast_apis_link_href"], \
             "The attribute 'href' of the Current and Forecast APIs link does not match the expected value"
 
+    def test_tc_01_07_02_verify_href_in_current_and_forecast_apis_link(self, driver):
+        """Verify accuracy of the attribute 'href' in the Historical Weather Data link"""
+        page = FooterPage(driver, URL_MAIN_PAGE)
+        page.open()
+        assert page.get_historical_weather_data_link_href() == footer_links_href["historical_weather_data_link_href"], \
+            "The attribute 'href' of the Historical Weather Data link does not match the expected value"
+
 
 class TestFooterElementsParameterization:
     footer_locators = FooterLocators()
