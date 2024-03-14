@@ -51,3 +51,6 @@ class FooterPage(BasePage):
 
     def get_current_and_forecast_apis_link_href(self):
         return self.get_link_href(self.footer_locators.CURRENT_AND_FORECAST_APIS_LINK)
+
+    def get_historical_weather_data_link_href(self):
+        return self.get_link_href(self.footer_locators.HISTORICAL_WEATHER_DATA_LINK)

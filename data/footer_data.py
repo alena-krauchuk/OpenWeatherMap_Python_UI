@@ -70,5 +70,6 @@ class FooterElementsText:
 
 
 footer_links_href = {
-    "current_and_forecast_apis_link_href": "https://openweathermap.org/api#current"
+    "current_and_forecast_apis_link_href": "https://openweathermap.org/api#current",
+    "historical_weather_data_link_href": "https://openweathermap.org/api#history"
 }
